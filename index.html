@@ -3,122 +3,427 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Liste de naissance — seconde main</title>
-  <meta name="description" content="Liste de naissance seconde main : objets symboliques + participation libre." />
+  <title>Liste de naissance — Bébé de Myriam & Rémy</title>
+  <meta name="description" content="Liste de naissance seconde main (éco) — Bébé de Myriam & Rémy. Objets symboliques + participation libre." />
+
   <style>
-    :root{--bg:#0b0c0f;--card:#12141a;--txt:#f2f3f5;--muted:#b9bdc7;--btn:#ffffff;--btnTxt:#0b0c0f;--line:#262a33}
-    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;background:var(--bg);color:var(--txt)}
-    .wrap{max-width:980px;margin:0 auto;padding:28px 18px 60px}
-    header{padding:10px 0 22px;border-bottom:1px solid var(--line);margin-bottom:22px}
-    h1{font-size:28px;margin:0 0 6px} p{margin:8px 0;color:var(--muted);line-height:1.5}
-    .hero{display:flex;gap:14px;flex-wrap:wrap;align-items:flex-start;justify-content:space-between}
-    .badge{display:inline-block;border:1px solid var(--line);padding:6px 10px;border-radius:999px;color:var(--muted);font-size:13px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:18px}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
-    .card h3{margin:0 0 6px;font-size:18px}
-    .price{font-size:13px;color:var(--muted);margin-bottom:10px}
-    .serious{font-size:14px;color:var(--muted)}
-    a.btn{display:inline-block;margin-top:12px;background:var(--btn);color:var(--btnTxt);text-decoration:none;padding:10px 12px;border-radius:12px;font-weight:700}
-    footer{margin-top:26px;border-top:1px solid var(--line);padding-top:16px}
-    .small{font-size:12.5px;color:var(--muted)}
-    .ctaRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-    a.ghost{display:inline-block;border:1px solid var(--line);color:var(--txt);text-decoration:none;padding:10px 12px;border-radius:12px}
+    :root{
+      --bg: #fbfaf8;           /* ivoire très doux */
+      --card: #ffffff;
+      --ink: #1f2a27;          /* texte vert très foncé */
+      --muted: #556764;
+      --line: #e8e2dc;
+      --sage: #cfe7de;         /* vert pâle */
+      --sage2:#e7f4ef;
+      --pink: #f3c8d3;         /* rose poudré */
+      --pink2:#fde7ee;
+      --btn: #1f2a27;
+      --btnText: #ffffff;
+      --shadow: 0 12px 30px rgba(31,42,39,.08);
+      --radius: 18px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Noto Sans", Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 500px at 10% 0%, var(--sage2), transparent 60%),
+        radial-gradient(900px 400px at 90% 10%, var(--pink2), transparent 55%),
+        linear-gradient(180deg, #fff, var(--bg) 40%, #fff 100%);
+    }
+
+    .wrap{max-width:1050px;margin:0 auto;padding:26px 16px 60px}
+    header{margin-bottom:18px}
+    .top{
+      display:grid; gap:16px;
+      grid-template-columns: 1.25fr .75fr;
+      align-items:stretch;
+    }
+    @media (max-width: 860px){
+      .top{grid-template-columns:1fr}
+    }
+
+    .hero{
+      background: linear-gradient(135deg, var(--sage2), #fff 45%, var(--pink2));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:18px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:before{
+      content:"";
+      position:absolute; inset:-40px -40px auto auto;
+      width:220px;height:220px;border-radius:50%;
+      background: radial-gradient(circle at 30% 30%, var(--pink), transparent 65%);
+      opacity:.55;
+      filter: blur(1px);
+    }
+    .hero:after{
+      content:"";
+      position:absolute; inset:auto auto -60px -60px;
+      width:260px;height:260px;border-radius:50%;
+      background: radial-gradient(circle at 40% 40%, var(--sage), transparent 65%);
+      opacity:.55;
+      filter: blur(1px);
+    }
+
+    h1{margin:0 0 8px;font-size:28px;letter-spacing:-.2px}
+    .sub{margin:0 0 10px;color:var(--muted);line-height:1.5}
+
+    .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .badge{
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:999px;
+      padding:7px 10px;
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    .ctaBox{
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:12px;
+    }
+
+    .btnRow{display:flex;gap:10px;flex-wrap:wrap}
+    a.btn{
+      display:inline-block;
+      background: var(--btn);
+      color: var(--btnText);
+      text-decoration:none;
+      padding:12px 14px;
+      border-radius: 14px;
+      font-weight:800;
+    }
+    a.ghost{
+      display:inline-block;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg,#fff,#fff);
+      color:var(--ink);
+      text-decoration:none;
+      padding:12px 14px;
+      border-radius: 14px;
+      font-weight:700;
+    }
+
+    .note{
+      background: linear-gradient(135deg, #fff, #fff 55%, var(--sage2));
+      border:1px dashed rgba(85,103,100,.35);
+      border-radius: 14px;
+      padding:12px;
+      color:var(--muted);
+      line-height:1.45;
+      font-size:13px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+      gap:14px;
+      margin-top:16px;
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      min-height: 330px;
+    }
+
+    .img{
+      height:150px;
+      background: linear-gradient(135deg, var(--sage2), #fff 40%, var(--pink2));
+      border-bottom:1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px;
+    }
+    .img img{width:100%;height:100%;object-fit:contain}
+
+    .body{padding:14px 14px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+    .title{margin:0;font-size:17px;letter-spacing:-.1px}
+    .price{font-size:12.8px;color:var(--muted)}
+    .desc{margin:0;color:var(--muted);line-height:1.45;font-size:13.5px}
+    .spacer{flex:1}
+    .card a.btn{margin-top:10px;align-self:flex-start}
+
+    section#pourquoi{margin-top:18px}
+    .panel{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:16px;
+    }
+    .panel h2{margin:0 0 8px;font-size:18px}
+    .panel p{margin:8px 0;color:var(--muted);line-height:1.5}
+    footer{margin-top:22px;color:var(--muted);font-size:12.5px}
+    footer a{color:inherit}
   </style>
 </head>
+
 <body>
   <div class="wrap">
-    <header>
+    <header class="top">
       <div class="hero">
-        <div>
-          <h1>La liste de naissance (version seconde main)</h1>
-          <p>
-            On a choisi une approche simple : <strong>acheter principalement d’occasion</strong> (ou seconde main) pour éviter le gaspillage,
-            tout en gardant un côté symbolique pour celles et ceux qui veulent participer.
-          </p>
-          <span class="badge">🌿 Seconde main > neuf</span>
+        <h1>Liste de naissance — Bééébé de Myriam & Rémy</h1>
+        <p class="sub">
+          Pour l’arrivée de notre bébé, on privilégie <strong>la seconde main</strong> et l’occasion : moins de gaspillage, plus de sens,
+          et souvent des objets en super état.
+        </p>
+
+        <div class="badges">
+          <span class="badge">🌿 Seconde main & occasion</span>
           <span class="badge">💛 Participation libre</span>
-          <span class="badge">😄 Objets humoristiques, démarche sérieuse</span>
+          <span class="badge">😄 Titres humoristiques, démarche sérieuse</span>
+          <span class="badge">🔒 Pas d’adresse / pas de RIB en public</span>
         </div>
-        <div class="ctaRow">
-          <a class="btn" href="paiement.html">Participer maintenant</a>
+      </div>
+
+      <div class="ctaBox">
+        <div>
+          <div class="note">
+            <strong>Important :</strong> les “produits” ci-dessous sont des <strong>repères symboliques</strong>. Votre participation
+            nous aide à les acheter ensuite, principalement en seconde main, selon les opportunités et les besoins réels.
+          </div>
+        </div>
+
+        <div class="btnRow">
+          <a class="btn" href="paiement.html">Participer</a>
           <a class="ghost" href="#pourquoi">Pourquoi cette liste ?</a>
         </div>
       </div>
     </header>
 
-    <section>
-      <p class="small">
-        <strong>Important :</strong> les “objets” ci-dessous sont des <strong>repères symboliques</strong>.
-        Votre participation nous aidera à les acquérir ensuite, principalement en seconde main, selon les opportunités et les besoins réels.
-      </p>
+    <!-- Petites images SVG (intégrées, pas besoin de fichiers) -->
+    <script>
+      // Génère des "images" SVG en data-URI (un visuel doux avec icône + fond)
+      // Tu peux changer les emojis/labels facilement dans la liste des produits.
+      function svgCard(label, emoji) {
+        const svg = `
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="450">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E7F4EF"/>
+      <stop offset="0.42" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#FDE7EE"/>
+    </linearGradient>
+    <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="rgba(31,42,39,.14)"/>
+    </filter>
+  </defs>
 
-      <div class="grid">
-        <div class="card">
-          <h3>🍼 Le “Biberon du futur” (pour nourrir un mini-humain)</h3>
-          <div class="price">Montant indicatif : 15–40 €</div>
-          <div class="serious">On privilégie des lots d’occasion en très bon état, faciles à stériliser, et adaptés à l’âge.</div>
+  <rect x="0" y="0" width="900" height="450" fill="url(#g)"/>
+
+  <circle cx="170" cy="110" r="120" fill="#CFE7DE" opacity="0.55"/>
+  <circle cx="770" cy="120" r="130" fill="#F3C8D3" opacity="0.55"/>
+  <circle cx="260" cy="410" r="170" fill="#CFE7DE" opacity="0.35"/>
+  <circle cx="680" cy="410" r="170" fill="#F3C8D3" opacity="0.28"/>
+
+  <rect x="90" y="110" width="720" height="240" rx="26" fill="#FFFFFF" opacity="0.88" filter="url(#s)"/>
+  <text x="140" y="220" font-size="86" font-family="system-ui, -apple-system, Segoe UI, Roboto">${emoji}</text>
+  <text x="240" y="208" font-size="34" font-weight="700" fill="#1F2A27" font-family="system-ui, -apple-system, Segoe UI, Roboto">${escapeXml(label)}</text>
+  <text x="240" y="250" font-size="20" fill="#556764" font-family="system-ui, -apple-system, Segoe UI, Roboto">Objet symbolique • seconde main</text>
+</svg>`;
+        return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
+      }
+      function escapeXml(unsafe) {
+        return unsafe.replace(/[<>&'"]/g, (c) => ({
+          '<':'&lt;','>':'&gt;','&':'&amp;',"'":'&apos;','"':'&quot;'
+        }[c]));
+      }
+      window.svgCard = svgCard;
+    </script>
+
+    <section class="grid" id="liste">
+      <!-- 12 produits -->
+      <article class="card">
+        <div class="img"><img alt="Biberons" id="img1"></div>
+        <div class="body">
+          <h3 class="title">🍼 Kit “Biberon du futur”</h3>
+          <div class="price">Montant indicatif : 15–45 €</div>
+          <p class="desc">On privilégie des lots d’occasion en très bon état (ou neuf si besoin), faciles à stériliser et adaptés à l’âge.</p>
+          <div class="spacer"></div>
           <a class="btn" href="paiement.html">Participer</a>
         </div>
+      </article>
 
-        <div class="card">
-          <h3>🧸 Le Doudou diplomate (négociateur de siestes)</h3>
-          <div class="price">Montant indicatif : 10–30 €</div>
-          <div class="serious">Seconde main ok si propre et nickel, sinon on prendra du neuf sur ce point si besoin.</div>
+      <article class="card">
+        <div class="img"><img alt="Doudou" id="img2"></div>
+        <div class="body">
+          <h3 class="title">🧸 Le Doudou diplomate</h3>
+          <div class="price">Montant indicatif : 10–35 €</div>
+          <p class="desc">On choisira un doudou clean / nickel. Seconde main ok si parfait, sinon neuf (on ne prend pas de risque “microbiologie”).</p>
+          <div class="spacer"></div>
           <a class="btn" href="paiement.html">Participer</a>
         </div>
+      </article>
 
-        <div class="card">
-          <h3>🚼 Le Stock de couches “anti-panique”</h3>
-          <div class="price">Montant indicatif : 20–100 €</div>
-          <div class="serious">On achètera au fur et à mesure (et on ajustera selon ce qui marche vraiment).</div>
+      <article class="card">
+        <div class="img"><img alt="Gigoteuse" id="img3"></div>
+        <div class="body">
+          <h3 class="title">🌙 Gigoteuse “Anti-négociation”</h3>
+          <div class="price">Montant indicatif : 15–60 €</div>
+          <p class="desc">On cherchera une gigoteuse d’occasion en super état (ou neuve), adaptée à la saison et aux tailles.</p>
+          <div class="spacer"></div>
           <a class="btn" href="paiement.html">Participer</a>
         </div>
+      </article>
 
-        <div class="card">
-          <h3>🛏️ Le Trône de sommeil (aka lit / cododo)</h3>
+      <article class="card">
+        <div class="img"><img alt="Cododo" id="img4"></div>
+        <div class="body">
+          <h3 class="title">🛏️ Le Trône de sommeil (cododo / lit)</h3>
           <div class="price">Montant indicatif : 80–300 €</div>
-          <div class="serious">On cherchera un modèle sûr et complet d’occasion (sinon neuf pour le matelas selon les recommandations).</div>
+          <p class="desc">On privilégiera une structure d’occasion complète et sûre. Matelas : selon recommandations, neuf possible.</p>
+          <div class="spacer"></div>
           <a class="btn" href="paiement.html">Participer</a>
         </div>
+      </article>
 
-        <div class="card">
-          <h3>🚗 La Capsule spatiale (siège auto)</h3>
-          <div class="price">Montant indicatif : 120–350 €</div>
-          <div class="serious">Sécurité d’abord : on sera très exigeants (historique, état, normes). Selon opportunité.</div>
+      <article class="card">
+        <div class="img"><img alt="Siège auto" id="img5"></div>
+        <div class="body">
+          <h3 class="title">🚗 Capsule spatiale (siège auto)</h3>
+          <div class="price">Montant indicatif : 120–380 €</div>
+          <p class="desc">Sécurité d’abord : on sera très stricts (historique, état, normes). Occasion seulement si confiance totale.</p>
+          <div class="spacer"></div>
           <a class="btn" href="paiement.html">Participer</a>
         </div>
+      </article>
 
-        <div class="card">
-          <h3>📚 Le Pack “Histoires du soir”</h3>
-          <div class="price">Montant indicatif : 10–60 €</div>
-          <div class="serious">Livres d’occasion + médiathèque + quelques indispensables. Objectif : du temps ensemble.</div>
+      <article class="card">
+        <div class="img"><img alt="Poussette" id="img6"></div>
+        <div class="body">
+          <h3 class="title">🛒 Char d’exploration (poussette)</h3>
+          <div class="price">Montant indicatif : 80–450 €</div>
+          <p class="desc">On cherchera une poussette d’occasion robuste, propre, complète (et facile à plier). Bonus : bon état des roues.</p>
+          <div class="spacer"></div>
           <a class="btn" href="paiement.html">Participer</a>
         </div>
-      </div>
+      </article>
+
+      <article class="card">
+        <div class="img"><img alt="Portage" id="img7"></div>
+        <div class="body">
+          <h3 class="title">🤍 Cape de portage (écharpe / porte-bébé)</h3>
+          <div class="price">Montant indicatif : 25–160 €</div>
+          <p class="desc">Seconde main idéale : on choisira une marque fiable et un modèle adapté (confort + sécurité + réglages).</p>
+          <div class="spacer"></div>
+          <a class="btn" href="paiement.html">Participer</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="img"><img alt="Bain" id="img8"></div>
+        <div class="body">
+          <h3 class="title">🛁 Station “Splash” (bain & soins)</h3>
+          <div class="price">Montant indicatif : 10–70 €</div>
+          <p class="desc">Baignoire / transat de bain d’occasion + petits indispensables (thermomètre, cape de bain). On reste minimalistes.</p>
+          <div class="spacer"></div>
+          <a class="btn" href="paiement.html">Participer</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="img"><img alt="Vêtements" id="img9"></div>
+        <div class="body">
+          <h3 class="title">👕 Pack “Mini-looks” (0–12 mois)</h3>
+          <div class="price">Montant indicatif : 20–120 €</div>
+          <p class="desc">On achètera surtout des lots d’occasion propres et en très bon état, adaptés aux saisons, sans sur-stock.</p>
+          <div class="spacer"></div>
+          <a class="btn" href="paiement.html">Participer</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="img"><img alt="Livres" id="img10"></div>
+        <div class="body">
+          <h3 class="title">📚 Histoires du soir (pack livres)</h3>
+          <div class="price">Montant indicatif : 10–70 €</div>
+          <p class="desc">Beaucoup d’occasion + médiathèque. On veut surtout des livres doux, solides, et qu’on a plaisir à relire.</p>
+          <div class="spacer"></div>
+          <a class="btn" href="paiement.html">Participer</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="img"><img alt="Éveil" id="img11"></div>
+        <div class="body">
+          <h3 class="title">🪁 Kit “Éveil sans sur-stimulus”</h3>
+          <div class="price">Montant indicatif : 10–90 €</div>
+          <p class="desc">Quelques jouets bien choisis (tapis, hochets, cartes contrastées), plutôt qualitatifs et durables, souvent d’occasion.</p>
+          <div class="spacer"></div>
+          <a class="btn" href="paiement.html">Participer</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="img"><img alt="Couches" id="img12"></div>
+        <div class="body">
+          <h3 class="title">🚼 Stock “Anti-panique” (couches & lingettes)</h3>
+          <div class="price">Montant indicatif : 20–140 €</div>
+          <p class="desc">On ajustera selon ce qui marche vraiment. Objectif : éviter d’acheter trop, trop tôt. Pratique & simple.</p>
+          <div class="spacer"></div>
+          <a class="btn" href="paiement.html">Participer</a>
+        </div>
+      </article>
     </section>
 
-    <section id="pourquoi" style="margin-top:22px">
-      <div class="card">
-        <h3>🌿 Pourquoi cette démarche ?</h3>
-        <p class="serious">
-          On veut consommer moins, mieux, et éviter d’accumuler. La seconde main permet de trouver de très beaux objets,
-          souvent comme neufs, tout en réduisant l’impact écologique. Cette liste est donc un mix :
-          <strong>un geste symbolique</strong> pour vous, <strong>une liberté d’achat</strong> pour nous.
+    <section id="pourquoi">
+      <div class="panel">
+        <h2>🌿 Pourquoi cette liste “seconde main” ?</h2>
+        <p>
+          On veut consommer moins, mieux, et éviter d’accumuler. La seconde main permet de trouver des objets en super état,
+          tout en réduisant l’impact écologique.
         </p>
-        <p class="serious">
-          Pour protéger nos données personnelles, les paiements passent par des plateformes de paiement (CB / etc.).
-          Nous n’affichons pas d’adresse, ni de RIB en public.
+        <p>
+          Pour vous, ça reste un geste symbolique clair. Pour nous, ça laisse la liberté d’acheter au bon moment, selon les besoins réels.
         </p>
-        <a class="btn" href="paiement.html">Accéder aux paiements</a>
+        <p>
+          Côté confidentialité : on ne publie ni adresse, ni RIB. Les participations passent par une plateforme de paiement sécurisée.
+        </p>
+        <div class="btnRow">
+          <a class="btn" href="paiement.html">Accéder aux paiements</a>
+        </div>
       </div>
     </section>
 
     <footer>
-      <p class="small">
-        Merci 💛 — On vous partagera des nouvelles (et des photos des trouvailles seconde main !) après l’arrivée du bébé.
-      </p>
+      Merci 💛 — On vous partagera des nouvelles (et des photos de nos trouvailles seconde main) après l’arrivée du bébé.
     </footer>
   </div>
+
+  <script>
+    // Assigne les images (SVG intégrés) à chaque carte
+    document.getElementById("img1").src  = svgCard("Biberons", "🍼");
+    document.getElementById("img2").src  = svgCard("Doudou", "🧸");
+    document.getElementById("img3").src  = svgCard("Gigoteuse", "🌙");
+    document.getElementById("img4").src  = svgCard("Sommeil", "🛏️");
+    document.getElementById("img5").src  = svgCard("Siège auto", "🚗");
+    document.getElementById("img6").src  = svgCard("Poussette", "🛒");
+    document.getElementById("img7").src  = svgCard("Portage", "🤍");
+    document.getElementById("img8").src  = svgCard("Bain", "🛁");
+    document.getElementById("img9").src  = svgCard("Vêtements", "👕");
+    document.getElementById("img10").src = svgCard("Livres", "📚");
+    document.getElementById("img11").src = svgCard("Éveil", "🪁");
+    document.getElementById("img12").src = svgCard("Couches", "🚼");
+  </script>
 </body>
 </html>
-
