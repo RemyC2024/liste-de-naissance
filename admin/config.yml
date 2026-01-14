@@ -1,6 +1,12 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: TONPSEUDO_GITHUB/liste-bebe   # <-- à remplacer
   branch: main
+
+  # OAuth (gratuit) — pas besoin de Netlify
+  base_url: https://decapcms-oauth.netlify.app
+  auth_endpoint: auth
+  client_id: TON_CLIENT_ID_GITHUB     # <-- à remplacer
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
@@ -11,18 +17,6 @@ collections:
   - name: "content"
     label: "Contenu du site"
     files:
-      - name: "site"
-        label: "Page Liste (Accueil)"
-        file: "content/site.json"
-        format: "json"
-        fields:
-          - { label: "Titre", name: "title", widget: "string" }
-          - { label: "Sous-titre", name: "subtitle", widget: "text" }
-          - label: "Badges"
-            name: "badges"
-            widget: "list"
-            field: { label: "Badge", name: "badge", widget: "string" }
-
       - name: "paiement"
         label: "Page Paiement"
         file: "content/paiement.json"
@@ -30,8 +24,7 @@ collections:
         fields:
           - { label: "Titre", name: "title", widget: "string" }
           - { label: "Intro", name: "intro", widget: "text" }
-
-          - label: "Bloc 1 — Formulaire (adresse / don / RIB)"
+          - label: "Bloc 1 — Formulaire"
             name: "bloc_form"
             widget: "object"
             fields:
@@ -39,45 +32,41 @@ collections:
               - { label: "Texte", name: "text", widget: "text" }
               - { label: "URL Embed Google Forms", name: "google_forms_embed_url", widget: "string" }
               - { label: "Hauteur Iframe", name: "iframe_height", widget: "number", value_type: "int", default: 860 }
-
           - label: "Bloc 2 — Lydia"
             name: "bloc_lydia"
             widget: "object"
             fields:
               - { label: "Titre", name: "title", widget: "string" }
               - { label: "Texte", name: "text", widget: "text" }
-              - { label: "Pseudo Lydia (ex: @MyriamEtRemy)", name: "handle", widget: "string", required: false }
-              - { label: "Lien Lydia (optionnel)", name: "link", widget: "string", required: false }
-
+              - { label: "Pseudo Lydia", name: "handle", widget: "string", required: false }
+              - { label: "Lien Lydia", name: "link", widget: "string", required: false }
           - label: "Bloc 3 — Wero"
             name: "bloc_wero"
             widget: "object"
             fields:
               - { label: "Titre", name: "title", widget: "string" }
               - { label: "Texte", name: "text", widget: "text" }
-
-          - label: "Bloc 4 — Carte bancaire (HelloAsso)"
+          - label: "Bloc 4 — CB (HelloAsso)"
             name: "bloc_cb"
             widget: "object"
             fields:
               - { label: "Titre", name: "title", widget: "string" }
               - { label: "Texte", name: "text", widget: "text" }
-              - { label: "Note contribution (facultative)", name: "note", widget: "text" }
+              - { label: "Note", name: "note", widget: "text" }
               - { label: "Lien HelloAsso", name: "helloasso_link", widget: "string" }
-              - { label: "Texte bouton", name: "button_text", widget: "string", default: "Payer par carte via HelloAsso" }
+              - { label: "Texte bouton", name: "button_text", widget: "string" }
 
   - name: "produits"
-    label: "Produits (liste)"
+    label: "Produits"
     file: "content/produits.json"
     format: "json"
     fields:
       - label: "Produits"
         name: "items"
         widget: "list"
-        summary: "{{fields.title}}"
         fields:
-          - { label: "Ordre (1-99)", name: "order", widget: "number", value_type: "int" }
-          - { label: "Titre (avec emoji)", name: "title", widget: "string" }
+          - { label: "Ordre", name: "order", widget: "number", value_type: "int" }
+          - { label: "Titre", name: "title", widget: "string" }
           - { label: "Montant indicatif", name: "price", widget: "string" }
-          - { label: "Description (sérieuse)", name: "description", widget: "text" }
+          - { label: "Description", name: "description", widget: "text" }
           - { label: "Image", name: "image", widget: "image", required: false }
