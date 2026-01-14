@@ -44,8 +44,8 @@ async function getJSON(path){
 
 // Index: injecter titre, badges, produits
 async function initIndex(){
-  const site = await getJSON("/content/site.json");
-  const produits = await getJSON("/content/produits.json");
+  const site = await getJSON("content/site.json");
+  const produits = await getJSON("content/produits.json");
 
   document.querySelector("[data-site-title]").textContent = site.title;
   document.querySelector("[data-site-subtitle]").textContent = site.subtitle;
@@ -68,7 +68,7 @@ async function initIndex(){
         el("div",{class:"price"}, `Montant indicatif : ${item.price}`),
         el("p",{class:"desc"}, item.description),
         el("div",{class:"spacer"}),
-        el("a",{class:"btn", href:"/paiement.html"}, "Participer")
+        el("a",{class:"btn", href:"paiement.html"}, "Participer")
       ])
     ]);
     grid.appendChild(card);
@@ -76,7 +76,7 @@ async function initIndex(){
 }
 
 async function initPaiement(){
-  const p = await getJSON("/content/paiement.json");
+  const p = await getJSON("content/paiement.json");
 
   document.querySelector("[data-pay-title]").textContent = p.title;
   document.querySelector("[data-pay-intro]").textContent = p.intro;
