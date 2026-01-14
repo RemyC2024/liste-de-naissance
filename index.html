@@ -26,7 +26,7 @@
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Noto Sans", Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", Arial, "Apple Color Emoji","Segoe UI Emoji";
       color:var(--ink);
       background:
         radial-gradient(1200px 500px at 10% 0%, var(--sage2), transparent 60%),
@@ -182,7 +182,7 @@
   <div class="wrap">
     <header class="top">
       <div class="hero">
-        <h1>Liste de naissance — Bééébé de Myriam & Rémy</h1>
+        <h1>Liste de naissance — Bébé de Myriam & Rémy</h1>
         <p class="sub">
           Pour l’arrivée de notre bébé, on privilégie <strong>la seconde main</strong> et l’occasion : moins de gaspillage, plus de sens,
           et souvent des objets en super état.
@@ -191,7 +191,7 @@
         <div class="badges">
           <span class="badge">🌿 Seconde main & occasion</span>
           <span class="badge">💛 Participation libre</span>
-          <span class="badge">😄 Titres humoristiques, démarche sérieuse</span>
+          <span class="badge">😄 Ton humoristique, démarche sérieuse</span>
           <span class="badge">🔒 Pas d’adresse / pas de RIB en public</span>
         </div>
       </div>
@@ -211,50 +211,10 @@
       </div>
     </header>
 
-    <!-- Petites images SVG (intégrées, pas besoin de fichiers) -->
-    <script>
-      // Génère des "images" SVG en data-URI (un visuel doux avec icône + fond)
-      // Tu peux changer les emojis/labels facilement dans la liste des produits.
-      function svgCard(label, emoji) {
-        const svg = `
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="450">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#E7F4EF"/>
-      <stop offset="0.42" stop-color="#FFFFFF"/>
-      <stop offset="1" stop-color="#FDE7EE"/>
-    </linearGradient>
-    <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="rgba(31,42,39,.14)"/>
-    </filter>
-  </defs>
-
-  <rect x="0" y="0" width="900" height="450" fill="url(#g)"/>
-
-  <circle cx="170" cy="110" r="120" fill="#CFE7DE" opacity="0.55"/>
-  <circle cx="770" cy="120" r="130" fill="#F3C8D3" opacity="0.55"/>
-  <circle cx="260" cy="410" r="170" fill="#CFE7DE" opacity="0.35"/>
-  <circle cx="680" cy="410" r="170" fill="#F3C8D3" opacity="0.28"/>
-
-  <rect x="90" y="110" width="720" height="240" rx="26" fill="#FFFFFF" opacity="0.88" filter="url(#s)"/>
-  <text x="140" y="220" font-size="86" font-family="system-ui, -apple-system, Segoe UI, Roboto">${emoji}</text>
-  <text x="240" y="208" font-size="34" font-weight="700" fill="#1F2A27" font-family="system-ui, -apple-system, Segoe UI, Roboto">${escapeXml(label)}</text>
-  <text x="240" y="250" font-size="20" fill="#556764" font-family="system-ui, -apple-system, Segoe UI, Roboto">Objet symbolique • seconde main</text>
-</svg>`;
-        return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
-      }
-      function escapeXml(unsafe) {
-        return unsafe.replace(/[<>&'"]/g, (c) => ({
-          '<':'&lt;','>':'&gt;','&':'&amp;',"'":'&apos;','"':'&quot;'
-        }[c]));
-      }
-      window.svgCard = svgCard;
-    </script>
-
     <section class="grid" id="liste">
       <!-- 12 produits -->
       <article class="card">
-        <div class="img"><img alt="Biberons" id="img1"></div>
+        <div class="img"><img alt="Biberons" id="img1" /></div>
         <div class="body">
           <h3 class="title">🍼 Kit “Biberon du futur”</h3>
           <div class="price">Montant indicatif : 15–45 €</div>
@@ -265,7 +225,7 @@
       </article>
 
       <article class="card">
-        <div class="img"><img alt="Doudou" id="img2"></div>
+        <div class="img"><img alt="Doudou" id="img2" /></div>
         <div class="body">
           <h3 class="title">🧸 Le Doudou diplomate</h3>
           <div class="price">Montant indicatif : 10–35 €</div>
@@ -276,7 +236,7 @@
       </article>
 
       <article class="card">
-        <div class="img"><img alt="Gigoteuse" id="img3"></div>
+        <div class="img"><img alt="Gigoteuse" id="img3" /></div>
         <div class="body">
           <h3 class="title">🌙 Gigoteuse “Anti-négociation”</h3>
           <div class="price">Montant indicatif : 15–60 €</div>
@@ -287,7 +247,7 @@
       </article>
 
       <article class="card">
-        <div class="img"><img alt="Cododo" id="img4"></div>
+        <div class="img"><img alt="Cododo" id="img4" /></div>
         <div class="body">
           <h3 class="title">🛏️ Le Trône de sommeil (cododo / lit)</h3>
           <div class="price">Montant indicatif : 80–300 €</div>
@@ -298,7 +258,7 @@
       </article>
 
       <article class="card">
-        <div class="img"><img alt="Siège auto" id="img5"></div>
+        <div class="img"><img alt="Siège auto" id="img5" /></div>
         <div class="body">
           <h3 class="title">🚗 Capsule spatiale (siège auto)</h3>
           <div class="price">Montant indicatif : 120–380 €</div>
@@ -309,7 +269,7 @@
       </article>
 
       <article class="card">
-        <div class="img"><img alt="Poussette" id="img6"></div>
+        <div class="img"><img alt="Poussette" id="img6" /></div>
         <div class="body">
           <h3 class="title">🛒 Char d’exploration (poussette)</h3>
           <div class="price">Montant indicatif : 80–450 €</div>
@@ -320,7 +280,7 @@
       </article>
 
       <article class="card">
-        <div class="img"><img alt="Portage" id="img7"></div>
+        <div class="img"><img alt="Portage" id="img7" /></div>
         <div class="body">
           <h3 class="title">🤍 Cape de portage (écharpe / porte-bébé)</h3>
           <div class="price">Montant indicatif : 25–160 €</div>
@@ -331,7 +291,7 @@
       </article>
 
       <article class="card">
-        <div class="img"><img alt="Bain" id="img8"></div>
+        <div class="img"><img alt="Bain" id="img8" /></div>
         <div class="body">
           <h3 class="title">🛁 Station “Splash” (bain & soins)</h3>
           <div class="price">Montant indicatif : 10–70 €</div>
@@ -342,7 +302,7 @@
       </article>
 
       <article class="card">
-        <div class="img"><img alt="Vêtements" id="img9"></div>
+        <div class="img"><img alt="Vêtements" id="img9" /></div>
         <div class="body">
           <h3 class="title">👕 Pack “Mini-looks” (0–12 mois)</h3>
           <div class="price">Montant indicatif : 20–120 €</div>
@@ -353,7 +313,7 @@
       </article>
 
       <article class="card">
-        <div class="img"><img alt="Livres" id="img10"></div>
+        <div class="img"><img alt="Livres" id="img10" /></div>
         <div class="body">
           <h3 class="title">📚 Histoires du soir (pack livres)</h3>
           <div class="price">Montant indicatif : 10–70 €</div>
@@ -364,7 +324,7 @@
       </article>
 
       <article class="card">
-        <div class="img"><img alt="Éveil" id="img11"></div>
+        <div class="img"><img alt="Éveil" id="img11" /></div>
         <div class="body">
           <h3 class="title">🪁 Kit “Éveil sans sur-stimulus”</h3>
           <div class="price">Montant indicatif : 10–90 €</div>
@@ -375,7 +335,7 @@
       </article>
 
       <article class="card">
-        <div class="img"><img alt="Couches" id="img12"></div>
+        <div class="img"><img alt="Couches" id="img12" /></div>
         <div class="body">
           <h3 class="title">🚼 Stock “Anti-panique” (couches & lingettes)</h3>
           <div class="price">Montant indicatif : 20–140 €</div>
@@ -411,6 +371,41 @@
   </div>
 
   <script>
+    // Génère des "images" SVG en data-URI (un visuel doux avec icône + fond)
+    // Fusionné ici pour garantir que svgCard est défini avant qu'on l'appelle.
+    function escapeXml(unsafe) {
+      return String(unsafe).replace(/[<>&'"]/g, (c) => ({
+        '<':'&lt;','>':'&gt;','&':'&amp;',"'":'&apos;','"':'&quot;'
+      }[c]));
+    }
+
+    function svgCard(label, emoji) {
+      const svg = `
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="450" viewBox="0 0 900 450" role="img" aria-label="${escapeXml(label)}">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E7F4EF"/>
+      <stop offset="0.42" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#FDE7EE"/>
+    </linearGradient>
+    <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="rgba(31,42,39,.14)"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="900" height="450" fill="url(#g)"/>
+  <circle cx="170" cy="110" r="120" fill="#CFE7DE" opacity="0.55"/>
+  <circle cx="770" cy="120" r="130" fill="#F3C8D3" opacity="0.55"/>
+  <circle cx="260" cy="410" r="170" fill="#CFE7DE" opacity="0.35"/>
+  <circle cx="680" cy="410" r="170" fill="#F3C8D3" opacity="0.28"/>
+  <rect x="90" y="110" width="720" height="240" rx="26" fill="#FFFFFF" opacity="0.88" filter="url(#s)"/>
+  <text x="140" y="220" font-size="86" font-family="system-ui, -apple-system, Segoe UI, Roboto">${emoji}</text>
+  <text x="240" y="208" font-size="34" font-weight="700" fill="#1F2A27" font-family="system-ui, -apple-system, Segoe UI, Roboto">${escapeXml(label)}</text>
+  <text x="240" y="250" font-size="20" fill="#556764" font-family="system-ui, -apple-system, Segoe UI, Roboto">Objet symbolique • seconde main</text>
+</svg>`;
+      return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
+    }
+
     // Assigne les images (SVG intégrés) à chaque carte
     document.getElementById("img1").src  = svgCard("Biberons", "🍼");
     document.getElementById("img2").src  = svgCard("Doudou", "🧸");
