@@ -3,10 +3,41 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Admin — Liste bébé</title>
+  <title>Liste de naissance — Bébé de Myriam & Rémy</title>
+  <link rel="stylesheet" href="/assets/style.css" />
 </head>
-<body>
-  <!-- Decap CMS -->
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+<body data-page="index">
+  <div class="wrap">
+    <header class="top">
+      <div class="hero">
+        <h1 data-site-title>Liste de naissance — Bébé de Myriam & Rémy</h1>
+        <p class="sub" data-site-subtitle></p>
+        <div class="badges" data-site-badges></div>
+      </div>
+
+      <div class="ctaBox">
+        <div class="note">
+          <strong>Important :</strong> les produits sont des <strong>repères symboliques</strong>. Votre participation nous aide à acheter ensuite, principalement en seconde main.
+        </div>
+        <div class="btnRow">
+          <a class="btn" href="/paiement.html">Participer</a>
+          <a class="ghost" href="#pourquoi">Pourquoi ?</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="grid" data-products></section>
+
+    <section id="pourquoi" class="panel">
+      <h2>🌿 Pourquoi cette liste “seconde main” ?</h2>
+      <p>On veut consommer moins, mieux, et éviter d’accumuler. La seconde main permet de trouver des objets en super état tout en réduisant l’impact écologique.</p>
+      <p>Pour vous, ça reste un geste symbolique clair. Pour nous, ça laisse la liberté d’acheter au bon moment, selon les besoins réels.</p>
+      <div class="btnRow"><a class="btn" href="/paiement.html">Accéder aux paiements</a></div>
+    </section>
+
+    <footer>Merci 💛 — On vous partagera des nouvelles (et des photos de nos trouvailles seconde main) après l’arrivée du bébé.</footer>
+  </div>
+
+  <script src="/assets/app.js"></script>
 </body>
 </html>
