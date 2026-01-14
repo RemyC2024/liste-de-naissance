@@ -3,41 +3,64 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Liste de naissance — Bébé de Myriam & Rémy</title>
+  <title>Liste de naissance de Myriam & Rémy</title>
   <link rel="stylesheet" href="assets/style.css" />
 </head>
+
 <body data-page="index">
   <div class="wrap">
-    <header class="top">
-      <div class="hero">
-        <h1 data-site-title>Liste de naissance — Bébé de Myriam & Rémy</h1>
-        <p class="sub" data-site-subtitle></p>
+
+    <!-- ENCARD 1 : Titre + intro + important -->
+    <section class="panel hero heroPanel">
+      <h1 data-site-title>Liste de naissance de Myriam & Rémy</h1>
+      <p class="sub" data-site-subtitle></p>
+
+        Nous attendons un petit Garcon pour la fin du mois de juin et suite a la demande grandissante de ses futus fans , vous trouverez ici notre liste de  naissance.      </p>
+
+
+      <div class="heroFooter">
         <div class="badges" data-site-badges></div>
-      </div>
-
-      <div class="ctaBox">
-        <div class="note">
-          <strong>Important :</strong> les produits sont des <strong>repères symboliques</strong>. Votre participation nous aide à acheter ensuite, principalement en seconde main.
-        </div>
         <div class="btnRow">
-          <a class="btn" href="paiement.html">Participer</a>
-          <a class="ghost" href="#pourquoi">Pourquoi ?</a>
         </div>
       </div>
-    </header>
+    </section>
+    
 
-    <section class="grid" data-products></section>
-
-    <section id="pourquoi" class="panel">
-      <h2>🌿 Pourquoi cette liste “seconde main” ?</h2>
-      <p>On veut consommer moins, mieux, et éviter d’accumuler. La seconde main permet de trouver des objets en super état tout en réduisant l’impact écologique.</p>
-      <p>Pour vous, ça reste un geste symbolique clair. Pour nous, ça laisse la liberté d’acheter au bon moment, selon les besoins réels.</p>
-      <div class="btnRow"><a class="btn" href="paiement.html">Accéder aux paiements</a></div>
+    <!-- ENCARD 2 : Explication seconde main -->
+    <section class="panel" style="margin-top:14px">
+      <h2>🌿 Notre idée : une liste de naissance “seconde main”</h2>
+      <p>
+        Plutôt qu’une liste classique, on préfère acheter des articles d’occasion en très bon état
+        (et du neuf évidemment pour l'hygiène, sécurité, etc.).
+      </p>
+      <p>
+        Les produits de cette liste servent donc de <strong>repères</strong> : votre participation nous aide à trouver
+        les bonnes opportunités au bon moment, selon les besoins réels.
+      </p>
+      <p style="margin-bottom:0">
+      </p>
     </section>
 
-    <footer>Merci 💛 — On vous partagera des nouvelles (et des photos de nos trouvailles seconde main) après l’arrivée du bébé.</footer>
+    <!-- 12 tuiles -->
+    <section class="grid" data-products style="margin-top:16px"></section>
+
   </div>
 
   <script src="assets/app.js"></script>
+
+  <!-- Style du bandeau "Important" (si tu ne l'as pas déjà mis dans style.css) -->
+  <style>
+    .important-banner{
+      margin-top: 12px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--pink2), #ffffff 55%, var(--sage2));
+      border: 1px dashed rgba(85, 103, 100, 0.40);
+      color: var(--ink);
+      font-size: 14px;
+      line-height: 1.45;
+      box-shadow: 0 6px 18px rgba(31, 42, 39, 0.06);
+    }
+  </style>
 </body>
 </html>

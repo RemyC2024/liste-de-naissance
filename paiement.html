@@ -3,65 +3,89 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Participer — Bébé de Myriam & Rémy</title>
+  <title>Participer — Myriam & Rémy</title>
   <link rel="stylesheet" href="assets/style.css" />
   <style>
     .card{padding:16px;margin:12px 0}
     .pill{display:inline-block;margin-left:8px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 10px;font-size:12.5px;color:var(--muted)}
-    iframe{width:100%;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow)}
     .small{font-size:12.8px;color:var(--muted)}
     code{background:#fff;border:1px dashed rgba(85,103,100,.35);padding:2px 6px;border-radius:10px}
   </style>
 </head>
+
 <body data-page="paiement">
   <div class="wrap">
     <header class="hero">
-      <h1 data-pay-title>Participer</h1>
-      <p class="sub" data-pay-intro></p>
+      <h1>Participer</h1>
+      <p class="sub">
+        Merci 💛 Vous trouverez ici toutes les informations de paiement.
+        N’hésitez pas à nous écrire via le formulaire pour qu’on sache à quoi vous souhaitez participer 🙂
+      </p>
       <div class="btnRow" style="margin-top:10px">
         <a class="ghost" href="index.html">← Retour à la liste</a>
       </div>
     </header>
 
-    <!-- 1) FORM -->
-    <section class="card panel">
-      <h2 data-form-title></h2>
-      <p class="small" data-form-text></p>
-      <iframe data-form-iframe src="" height="860" title="Formulaire adresse / don / RIB"></iframe>
-      <p class="small" style="margin-top:10px">
-        (On ne publie pas l’adresse ni le RIB en public. On vous répond via le formulaire.)
-      </p>
-    </section>
 
-    <!-- 2) LYDIA -->
-    <section class="card panel">
-      <h2 data-lydia-title></h2>
-      <p class="small" data-lydia-text></p>
-      <p class="small">Identifiant : <code data-lydia-handle></code></p>
-      <div class="btnRow">
-        <a class="btn" data-lydia-btn href="#" target="_blank" rel="noopener">Participer via Lydia</a>
-      </div>
-    </section>
+    <!-- 1) FORMULAIRE -->
+  <section class="card panel">
+    <h2>✉️ Nous écrire / envoyer quelque chose</h2>
+    <p class="small">
+      Pour nous envoyer un objet, poser une question, écrire un mot,
+      ou demander notre adresse.
+      (On évite de publier des infos personnelles en public.)
+    </p>
 
-    <!-- 3) WERO -->
-    <section class="card panel">
-      <h2 data-wero-title></h2>
-      <p class="small" data-wero-text></p>
-      <span class="pill">Demande via formulaire</span>
-    </section>
+    <div class="btnRow" style="margin-top:10px">
+      <a class="btn" href="https://forms.gle/7KBqUQe1orpDFuiV7" target="_blank" rel="noopener noreferrer">
+        Remplir le formulaire
+      </a>
+    </div>
+  </section>
 
-    <!-- 4) CB / HelloAsso -->
-    <section class="card panel">
-      <h2 data-cb-title></h2>
-      <p class="small" data-cb-text></p>
-      <p class="small" data-cb-note></p>
-      <div class="btnRow">
-        <a class="btn" data-cb-btn href="#" target="_blank" rel="noopener">Payer par carte via HelloAsso</a>
-        <span class="pill">CB simple</span>
-      </div>
-    </section>
+  <!-- 2) LYDIA -->
+  <section class="card panel">
+    <h2>📱 Participer via Lydia</h2>
+    <p class="small">
+      Le moyen le plus simple si vous utilisez déjà Lydia.
+    </p>
+
+    <div class="btnRow">
+      <a class="btn" href="TON_LIEN_LYDIA" target="_blank" rel="noopener noreferrer">
+        Ouvrir Lydia
+      </a>
+    </div>
+  </section>
+
+  <!-- 3) PAYPAL -->
+  <section class="card panel">
+    <h2>🅿️ Participer via PayPal</h2>
+    <p class="small">
+      Possible même sans compte PayPal, selon votre configuration.
+    </p>
+
+    <div class="btnRow">
+      <a class="btn" href="TON_LIEN_PAYPAL" target="_blank" rel="noopener noreferrer">
+        Ouvrir PayPal
+      </a>
+    </div>
+  </section>
+
+  <!-- 4) WERO -->
+  <section class="card panel">
+    <h2>🏦 Participer via Wero</h2>
+    <p class="small">
+      Le compte est lié au <strong>numéro de téléphone de Rémy</strong>.
+      Si vous ne l’avez pas, passez par le formulaire.
+    </p>
+
+    <div class="btnRow">
+      <a class="ghost" href="https://forms.gle/7KBqUQe1orpDFuiV7" target="_blank" rel="noopener noreferrer">
+        Je n’ai pas le numéro → formulaire
+      </a>
+    </div>
+  </section>
   </div>
 
-  <script src="assets/app.js"></script>
-</body>
-</html>
+
+

@@ -234,3 +234,128 @@ footer{
   color:var(--muted);
   font-size:12.5px;
 }
+/* --- Typo & rythme --- */
+h1{
+  font-size: 34px;
+  line-height: 1.05;
+  letter-spacing: -0.6px;
+}
+@media (max-width: 520px){
+  h1{ font-size: 28px; }
+}
+.sub{
+  font-size: 15.5px;
+  line-height: 1.55;
+  margin-top: 10px;
+  max-width: 72ch;
+}
+
+/* --- Encarts: plus “card premium” --- */
+.panel{
+  border-radius: 22px;
+  padding: 18px;
+}
+.heroPanel{
+  position: relative;
+  overflow: hidden;
+  padding: 22px;
+}
+.heroPanel::before{
+  content:"";
+  position:absolute;
+  inset:-40px -40px auto -40px;
+  height: 220px;
+  background:
+    radial-gradient(420px 180px at 18% 30%, rgba(207,231,222,.9), transparent 60%),
+    radial-gradient(420px 180px at 78% 10%, rgba(243,200,211,.9), transparent 60%);
+  pointer-events:none;
+  filter: blur(0px);
+}
+.heroPanel > *{ position: relative; }
+
+/* Footer du hero: badges + bouton alignés */
+.heroFooter{
+  display:flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+/* --- Bandeau Important (plus “bulle” et plus joli) --- */
+.important-banner{
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.78);
+  border: 1px solid rgba(232,226,220,.9);
+  box-shadow: 0 10px 26px rgba(31,42,39,.08);
+  backdrop-filter: blur(6px);
+  font-size: 14px;
+  line-height: 1.45;
+}
+.important-banner strong{
+  font-weight: 900;
+}
+
+/* --- 2e encart: meilleure lisibilité --- */
+.infoPanel h2{
+  margin-top: 0;
+  letter-spacing: -0.2px;
+}
+.infoPanel p{
+  max-width: 78ch;
+}
+
+/* --- Tuiles: plus stylées --- */
+.card{
+  border-radius: 22px;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 44px rgba(31,42,39,.12);
+}
+.img{
+  height: 160px;
+}
+.img img{
+  width:100%;
+  height:100%;
+  object-fit: cover;              /* plus “pro” que contain */
+  border-bottom: 1px solid var(--line);
+}
+
+/* Titre produit + prix */
+.title{
+  font-size: 16.5px;
+  letter-spacing: -0.2px;
+}
+.price{
+  display:inline-block;
+  width: fit-content;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  font-size: 12.5px;
+}
+
+/* --- Corrige les encarts trop hauts --- */
+.card.panel{
+  height: auto !important;
+  min-height: unset !important;
+  align-self: flex-start;
+}
+.card.panel{
+  padding-bottom: 12px;
+}
+
+.card.panel p{
+  margin-bottom: 8px;
+}
+
+.card.panel .btnRow{
+  margin-top: 6px;
+}
