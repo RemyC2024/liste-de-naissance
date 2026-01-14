@@ -1,12 +1,12 @@
 backend:
   name: github
-  repo: TONPSEUDO_GITHUB/liste-bebe   # <-- à remplacer
+  repo: RemyC2024/liste-de-naissance   # <-- à remplacer
   branch: main
 
   # OAuth (gratuit) — pas besoin de Netlify
   base_url: https://decapcms-oauth.netlify.app
   auth_endpoint: auth
-  client_id: TON_CLIENT_ID_GITHUB     # <-- à remplacer
+  client_id: Ov23liWHmc3hdPIkb54I     # <-- à remplacer
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
