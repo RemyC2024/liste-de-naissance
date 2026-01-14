@@ -1,1 +1,124 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Liste de naissance — seconde main</title>
+  <meta name="description" content="Liste de naissance seconde main : objets symboliques + participation libre." />
+  <style>
+    :root{--bg:#0b0c0f;--card:#12141a;--txt:#f2f3f5;--muted:#b9bdc7;--btn:#ffffff;--btnTxt:#0b0c0f;--line:#262a33}
+    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;background:var(--bg);color:var(--txt)}
+    .wrap{max-width:980px;margin:0 auto;padding:28px 18px 60px}
+    header{padding:10px 0 22px;border-bottom:1px solid var(--line);margin-bottom:22px}
+    h1{font-size:28px;margin:0 0 6px} p{margin:8px 0;color:var(--muted);line-height:1.5}
+    .hero{display:flex;gap:14px;flex-wrap:wrap;align-items:flex-start;justify-content:space-between}
+    .badge{display:inline-block;border:1px solid var(--line);padding:6px 10px;border-radius:999px;color:var(--muted);font-size:13px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:18px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+    .card h3{margin:0 0 6px;font-size:18px}
+    .price{font-size:13px;color:var(--muted);margin-bottom:10px}
+    .serious{font-size:14px;color:var(--muted)}
+    a.btn{display:inline-block;margin-top:12px;background:var(--btn);color:var(--btnTxt);text-decoration:none;padding:10px 12px;border-radius:12px;font-weight:700}
+    footer{margin-top:26px;border-top:1px solid var(--line);padding-top:16px}
+    .small{font-size:12.5px;color:var(--muted)}
+    .ctaRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    a.ghost{display:inline-block;border:1px solid var(--line);color:var(--txt);text-decoration:none;padding:10px 12px;border-radius:12px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="hero">
+        <div>
+          <h1>La liste de naissance (version seconde main)</h1>
+          <p>
+            On a choisi une approche simple : <strong>acheter principalement d’occasion</strong> (ou seconde main) pour éviter le gaspillage,
+            tout en gardant un côté symbolique pour celles et ceux qui veulent participer.
+          </p>
+          <span class="badge">🌿 Seconde main > neuf</span>
+          <span class="badge">💛 Participation libre</span>
+          <span class="badge">😄 Objets humoristiques, démarche sérieuse</span>
+        </div>
+        <div class="ctaRow">
+          <a class="btn" href="paiement.html">Participer maintenant</a>
+          <a class="ghost" href="#pourquoi">Pourquoi cette liste ?</a>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <p class="small">
+        <strong>Important :</strong> les “objets” ci-dessous sont des <strong>repères symboliques</strong>.
+        Votre participation nous aidera à les acquérir ensuite, principalement en seconde main, selon les opportunités et les besoins réels.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>🍼 Le “Biberon du futur” (pour nourrir un mini-humain)</h3>
+          <div class="price">Montant indicatif : 15–40 €</div>
+          <div class="serious">On privilégie des lots d’occasion en très bon état, faciles à stériliser, et adaptés à l’âge.</div>
+          <a class="btn" href="paiement.html">Participer</a>
+        </div>
+
+        <div class="card">
+          <h3>🧸 Le Doudou diplomate (négociateur de siestes)</h3>
+          <div class="price">Montant indicatif : 10–30 €</div>
+          <div class="serious">Seconde main ok si propre et nickel, sinon on prendra du neuf sur ce point si besoin.</div>
+          <a class="btn" href="paiement.html">Participer</a>
+        </div>
+
+        <div class="card">
+          <h3>🚼 Le Stock de couches “anti-panique”</h3>
+          <div class="price">Montant indicatif : 20–100 €</div>
+          <div class="serious">On achètera au fur et à mesure (et on ajustera selon ce qui marche vraiment).</div>
+          <a class="btn" href="paiement.html">Participer</a>
+        </div>
+
+        <div class="card">
+          <h3>🛏️ Le Trône de sommeil (aka lit / cododo)</h3>
+          <div class="price">Montant indicatif : 80–300 €</div>
+          <div class="serious">On cherchera un modèle sûr et complet d’occasion (sinon neuf pour le matelas selon les recommandations).</div>
+          <a class="btn" href="paiement.html">Participer</a>
+        </div>
+
+        <div class="card">
+          <h3>🚗 La Capsule spatiale (siège auto)</h3>
+          <div class="price">Montant indicatif : 120–350 €</div>
+          <div class="serious">Sécurité d’abord : on sera très exigeants (historique, état, normes). Selon opportunité.</div>
+          <a class="btn" href="paiement.html">Participer</a>
+        </div>
+
+        <div class="card">
+          <h3>📚 Le Pack “Histoires du soir”</h3>
+          <div class="price">Montant indicatif : 10–60 €</div>
+          <div class="serious">Livres d’occasion + médiathèque + quelques indispensables. Objectif : du temps ensemble.</div>
+          <a class="btn" href="paiement.html">Participer</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="pourquoi" style="margin-top:22px">
+      <div class="card">
+        <h3>🌿 Pourquoi cette démarche ?</h3>
+        <p class="serious">
+          On veut consommer moins, mieux, et éviter d’accumuler. La seconde main permet de trouver de très beaux objets,
+          souvent comme neufs, tout en réduisant l’impact écologique. Cette liste est donc un mix :
+          <strong>un geste symbolique</strong> pour vous, <strong>une liberté d’achat</strong> pour nous.
+        </p>
+        <p class="serious">
+          Pour protéger nos données personnelles, les paiements passent par des plateformes de paiement (CB / etc.).
+          Nous n’affichons pas d’adresse, ni de RIB en public.
+        </p>
+        <a class="btn" href="paiement.html">Accéder aux paiements</a>
+      </div>
+    </section>
+
+    <footer>
+      <p class="small">
+        Merci 💛 — On vous partagera des nouvelles (et des photos des trouvailles seconde main !) après l’arrivée du bébé.
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
 
