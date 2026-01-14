@@ -1,0 +1,131 @@
+media:
+  input: assets/uploads
+  output: assets/uploads
+
+content:
+  - name: site
+    label: Accueil (texte + badges)
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - name: title
+        label: Titre
+        type: string
+        required: true
+      - name: subtitle
+        label: Texte d’intro
+        type: text
+        required: true
+      - name: badges
+        label: Badges
+        type: list
+        fields:
+          - name: badge
+            label: Badge
+            type: string
+
+  - name: paiement
+    label: Page Paiement
+    type: file
+    path: content/paiement.json
+    format: json
+    fields:
+      - name: title
+        label: Titre
+        type: string
+        required: true
+      - name: intro
+        label: Intro
+        type: text
+
+      - name: bloc_form
+        label: Bloc 1 — Formulaire
+        type: object
+        fields:
+          - name: title
+            label: Titre
+            type: string
+          - name: text
+            label: Texte
+            type: text
+          - name: google_forms_embed_url
+            label: URL embed Google Forms
+            type: string
+          - name: iframe_height
+            label: Hauteur iframe
+            type: number
+
+      - name: bloc_lydia
+        label: Bloc 2 — Lydia
+        type: object
+        fields:
+          - name: title
+            label: Titre
+            type: string
+          - name: text
+            label: Texte
+            type: text
+          - name: handle
+            label: Pseudo Lydia
+            type: string
+          - name: link
+            label: Lien Lydia (optionnel)
+            type: string
+
+      - name: bloc_wero
+        label: Bloc 3 — Wero
+        type: object
+        fields:
+          - name: title
+            label: Titre
+            type: string
+          - name: text
+            label: Texte
+            type: text
+
+      - name: bloc_cb
+        label: Bloc 4 — CB / HelloAsso
+        type: object
+        fields:
+          - name: title
+            label: Titre
+            type: string
+          - name: text
+            label: Texte
+            type: text
+          - name: note
+            label: Note (contribution facultative)
+            type: text
+          - name: helloasso_link
+            label: Lien HelloAsso
+            type: string
+          - name: button_text
+            label: Texte bouton
+            type: string
+
+  - name: produits
+    label: Produits (les 12)
+    type: file
+    path: content/produits.json
+    format: json
+    fields:
+      - name: items
+        label: Produits
+        type: list
+        fields:
+          - name: order
+            label: Ordre
+            type: number
+          - name: title
+            label: Titre
+            type: string
+          - name: price
+            label: Montant indicatif
+            type: string
+          - name: description
+            label: Description
+            type: text
+          - name: image
+            label: Image
+            type: image
