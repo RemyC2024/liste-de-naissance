@@ -13,7 +13,13 @@ function el(tag, attrs={}, children=[]) {
   return n;
 }
 
-// Fallback “image” si aucune image uploadée
+function escapeXml(s){
+  return s.replace(/[<>&'"]/g,c=>({
+    '<':'&lt;','>':'&gt;','&':'&amp;',"'":'&apos;','"':'&quot;'
+  }[c]));
+}
+
+// Image de fallback (si aucune image uploadée)
 function svgFallback(label, emoji) {
   const svg = `
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="450">
@@ -29,12 +35,15 @@ function svgFallback(label, emoji) {
   <circle cx="770" cy="120" r="130" fill="#F3C8D3" opacity="0.55"/>
   <rect x="90" y="110" width="720" height="240" rx="26" fill="#FFFFFF" opacity="0.88"/>
   <text x="140" y="220" font-size="86" font-family="system-ui">${emoji}</text>
-  <text x="240" y="208" font-size="34" font-weight="700" fill="#1F2A27" font-family="system-ui">${escapeXml(label)}</text>
-  <text x="240" y="250" font-size="20" fill="#556764" font-family="system-ui">Objet symbolique • seconde main</text>
+  <text x="240" y="208" font-size="34" font-weight="700" fill="#1F2A27" font-family="system-ui">
+    ${escapeXml(label)}
+  </text>
+  <text x="240" y="250" font-size="20" fill="#556764" font-family="system-ui">
+    Objet symbolique • seconde main
+  </text>
 </svg>`;
   return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
 }
-function escapeXml(s){return s.replace(/[<>&'"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;',"'":'&apos;','"':'&quot;'}[c]))}
 
 async function getJSON(path){
   const r = await fetch(path, {cache:"no-store"});
@@ -42,56 +51,66 @@ async function getJSON(path){
   return await r.json();
 }
 
-// Index: injecter titre, badges, produits
+// Page index
 async function initIndex(){
-  const site = await getJSON("/content/site.json");
-  const produits = await getJSON("/content/produits.json");
+  const site = await getJSON("content/site.json");
+  const produits = await getJSON("content/produits.json");
 
   document.querySelector("[data-site-title]").textContent = site.title;
   document.querySelector("[data-site-subtitle]").textContent = site.subtitle;
 
   const badges = document.querySelector("[data-site-badges]");
   badges.innerHTML = "";
-  (site.badges || []).forEach(b => badges.appendChild(el("span",{class:"badge"}, b)));
+  (site.badges || []).forEach(b =>
+    badges.appendChild(el("span",{class:"badge"}, b))
+  );
 
   const grid = document.querySelector("[data-products]");
   grid.innerHTML = "";
 
-  const items = (produits.items || []).slice().sort((a,b)=>(a.order||0)-(b.order||0));
+  const items = (produits.items || []).slice()
+    .sort((a,b)=>(a.order||0)-(b.order||0));
+
   items.forEach(item => {
     const emoji = (item.title.match(/^\s*([^\s]+)/)?.[1]) || "🌿";
-    const imgSrc = item.image && item.image.trim() ? item.image : svgFallback(item.title.replace(/^\s*[^\s]+\s*/,""), emoji);
-    const card = el("article",{class:"card"},[
-      el("div",{class:"img"}, el("img",{src:imgSrc, alt:item.title})),
-      el("div",{class:"body"},[
-        el("h3",{class:"title"}, item.title),
-        el("div",{class:"price"}, `Montant indicatif : ${item.price}`),
-        el("p",{class:"desc"}, item.description),
-        el("div",{class:"spacer"}),
-        el("a",{class:"btn", href:"/paiement.html"}, "Participer")
+    const imgSrc = item.image && item.image.trim()
+      ? item.image
+      : svgFallback(item.title.replace(/^\s*[^\s]+\s*/,""), emoji);
+
+    grid.appendChild(
+      el("article",{class:"card"},[
+        el("div",{class:"img"},
+          el("img",{src:imgSrc, alt:item.title})
+        ),
+        el("div",{class:"body"},[
+          el("h3",{class:"title"}, item.title),
+          el("div",{class:"price"}, `Montant indicatif : ${item.price}`),
+          el("p",{class:"desc"}, item.description),
+          el("div",{class:"spacer"}),
+          el("a",{class:"btn", href:"paiement.html"}, "Participer")
+        ])
       ])
-    ]);
-    grid.appendChild(card);
+    );
   });
 }
 
+// Page paiement
 async function initPaiement(){
-  const p = await getJSON("/content/paiement.json");
+  const p = await getJSON("content/paiement.json");
 
   document.querySelector("[data-pay-title]").textContent = p.title;
   document.querySelector("[data-pay-intro]").textContent = p.intro;
 
-  // Form
   document.querySelector("[data-form-title]").textContent = p.bloc_form.title;
   document.querySelector("[data-form-text]").textContent = p.bloc_form.text;
   const iframe = document.querySelector("[data-form-iframe]");
   iframe.src = p.bloc_form.google_forms_embed_url;
   iframe.height = String(p.bloc_form.iframe_height || 860);
 
-  // Lydia
   document.querySelector("[data-lydia-title]").textContent = p.bloc_lydia.title;
   document.querySelector("[data-lydia-text]").textContent = p.bloc_lydia.text;
   document.querySelector("[data-lydia-handle]").textContent = p.bloc_lydia.handle || "";
+
   const lydiaBtn = document.querySelector("[data-lydia-btn]");
   if (p.bloc_lydia.link && p.bloc_lydia.link.trim()) {
     lydiaBtn.href = p.bloc_lydia.link;
@@ -100,14 +119,13 @@ async function initPaiement(){
     lydiaBtn.style.display = "none";
   }
 
-  // Wero
   document.querySelector("[data-wero-title]").textContent = p.bloc_wero.title;
   document.querySelector("[data-wero-text]").textContent = p.bloc_wero.text;
 
-  // CB / HelloAsso
   document.querySelector("[data-cb-title]").textContent = p.bloc_cb.title;
   document.querySelector("[data-cb-text]").textContent = p.bloc_cb.text;
   document.querySelector("[data-cb-note]").textContent = p.bloc_cb.note;
+
   const cbBtn = document.querySelector("[data-cb-btn]");
   cbBtn.href = p.bloc_cb.helloasso_link;
   cbBtn.textContent = p.bloc_cb.button_text || "Payer par carte via HelloAsso";
