@@ -4,145 +4,64 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Participer — Bébé de Myriam & Rémy</title>
-  <meta name="description" content="Participer à la liste de naissance — paiement CB + demande d’adresse pour envoi colis." />
-
+  <link rel="stylesheet" href="/assets/style.css" />
   <style>
-    :root{
-      --bg:#fbfaf8;--card:#fff;--ink:#1f2a27;--muted:#556764;--line:#e8e2dc;
-      --sage:#cfe7de;--sage2:#e7f4ef;--pink:#f3c8d3;--pink2:#fde7ee;
-      --btn:#1f2a27;--btnText:#fff;--shadow:0 12px 30px rgba(31,42,39,.08);--radius:18px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Noto Sans", Arial;
-      color:var(--ink);
-      background:
-        radial-gradient(1200px 500px at 10% 0%, var(--sage2), transparent 60%),
-        radial-gradient(900px 400px at 90% 10%, var(--pink2), transparent 55%),
-        linear-gradient(180deg, #fff, var(--bg) 40%, #fff 100%);
-    }
-    .wrap{max-width:820px;margin:0 auto;padding:26px 16px 60px}
-    header{
-      background: linear-gradient(135deg, var(--sage2), #fff 45%, var(--pink2));
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding:18px;
-      margin-bottom:14px;
-    }
-    h1{margin:0 0 8px;font-size:24px;letter-spacing:-.2px}
-    p{margin:8px 0;color:var(--muted);line-height:1.5}
-    .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-    a.btn{
-      display:inline-block;background:var(--btn);color:var(--btnText);
-      text-decoration:none;padding:12px 14px;border-radius:14px;font-weight:800;
-    }
-    a.ghost{
-      display:inline-block;border:1px solid var(--line);background:#fff;color:var(--ink);
-      text-decoration:none;padding:12px 14px;border-radius:14px;font-weight:700;
-    }
-    .card{
-      background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-      box-shadow:var(--shadow);padding:16px;margin:12px 0;
-    }
-    h2{margin:0 0 6px;font-size:18px}
+    .card{padding:16px;margin:12px 0}
+    .pill{display:inline-block;margin-left:8px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 10px;font-size:12.5px;color:var(--muted)}
+    iframe{width:100%;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow)}
     .small{font-size:12.8px;color:var(--muted)}
-    .pill{
-      display:inline-block;margin-top:8px;border:1px solid var(--line);background:linear-gradient(180deg,#fff,#fff);
-      border-radius:999px;padding:6px 10px;font-size:12.5px;color:var(--muted);
-    }
-    iframe{
-      width:100%;
-      border:1px solid var(--line);
-      border-radius:14px;
-      background:#fff;
-      box-shadow:var(--shadow);
-    }
     code{background:#fff;border:1px dashed rgba(85,103,100,.35);padding:2px 6px;border-radius:10px}
   </style>
 </head>
-
-  <body>
-      <div class="wrap">
-    <header>
-      <h1>Participer à la liste — Bébé de Myriam & Rémy</h1>
-      <p>
-        Les “produits” sont <strong>symboliques</strong>. Votre participation nous aide à acheter ensuite (principalement en seconde main),
-        selon les opportunités et les besoins réels.
-      </p>
-      <p class="small">
-        Pour protéger nos données personnelles, on ne publie pas d’adresse ni de RIB en public.
-      </p>
-      <div class="row">
-        <a class="ghost" href="index.html">← Retour à la liste</a>
+<body data-page="paiement">
+  <div class="wrap">
+    <header class="hero">
+      <h1 data-pay-title>Participer</h1>
+      <p class="sub" data-pay-intro></p>
+      <div class="btnRow" style="margin-top:10px">
+        <a class="ghost" href="/index.html">← Retour à la liste</a>
       </div>
     </header>
-  
-    <!-- 1) FORMULAIRE (adresse / don / questions / RIB) -->
-    <div class="card">
-      <h2>📦 Vous voulez nous envoyer quelque chose, donner un objet, poser une question… ou demander notre RIB ?</h2>
-      <p class="small">
-        Remplissez ce formulaire, et on vous répond avec tout ce qu’il faut (adresse d’envoi, infos, RIB pour virement, etc.).
-        <strong>On évite de publier ces infos ici pour rester discrets.</strong>
-      </p>
-  
-      <iframe
-        src="COLLE_ICI_L_URL_EMBED_GOOGLE_FORMS"
-        height="860"
-        frameborder="0"
-        marginheight="0"
-        marginwidth="0"
-        title="Formulaire de contact (adresse / don / RIB)">
-        Chargement…
-      </iframe>
-  
+
+    <!-- 1) FORM -->
+    <section class="card panel">
+      <h2 data-form-title></h2>
+      <p class="small" data-form-text></p>
+      <iframe data-form-iframe src="" height="860" title="Formulaire adresse / don / RIB"></iframe>
       <p class="small" style="margin-top:10px">
-        Astuce : dans ton Google Form, mets ces champs minimum :
-        <code>Prénom</code> • <code>Email</code> • <code>Objet de la demande</code> (adresse / don / question / RIB) • <code>Message</code>.
+        (On ne publie pas l’adresse ni le RIB en public. On vous répond via le formulaire.)
       </p>
-    </div>
-  
+    </section>
+
     <!-- 2) LYDIA -->
-    <div class="card">
-      <h2>📱 Lydia</h2>
-      <p class="small">
-        Si vous utilisez Lydia, c’est le plus rapide : vous pouvez participer en quelques secondes.
-      </p>
-      <p class="small">
-        Notre identifiant Lydia : <code>@VOTRE_PSEUDO_LYDIA</code>
-      </p>
-      <div class="row">
-        <a class="btn" href="LIEN_LYDIA_ICI" target="_blank" rel="noopener">Participer via Lydia</a>
-        <span class="pill">Simple & rapide</span>
+    <section class="card panel">
+      <h2 data-lydia-title></h2>
+      <p class="small" data-lydia-text></p>
+      <p class="small">Identifiant : <code data-lydia-handle></code></p>
+      <div class="btnRow">
+        <a class="btn" data-lydia-btn href="#" target="_blank" rel="noopener">Participer via Lydia</a>
       </div>
-    </div>
-  
+    </section>
+
     <!-- 3) WERO -->
-    <div class="card">
-      <h2>🏦 Wero</h2>
-      <p class="small">
-        Si vous préférez passer par votre banque (Wero), on peut aussi : faites la demande via le formulaire ci-dessus et on vous répond rapidement.
-      </p>
+    <section class="card panel">
+      <h2 data-wero-title></h2>
+      <p class="small" data-wero-text></p>
       <span class="pill">Demande via formulaire</span>
-    </div>
-  
-    <!-- 4) CARTE BLEUE (HelloAsso) -->
-    <div class="card">
-      <h2>💳 Carte bancaire (CB)</h2>
-      <p class="small">
-        Pour la carte bancaire, on a choisi <strong>HelloAsso</strong> : c’est la solution la plus simple, et surtout l’une des seules
-        qui ne prend pas de commission obligatoire sur les paiements.
-      </p>
-      <p class="small">
-        À noter : HelloAsso propose parfois une <strong>contribution à la plateforme</strong> lors du paiement — elle est <strong>facultative</strong>
-        (vous pouvez la mettre à 0€ si vous le souhaitez).
-      </p>
-  
-      <div class="row">
-        <a class="btn" href="COLLE_ICI_TON_LIEN_HELLOASSO" target="_blank" rel="noopener">Payer par carte via HelloAsso</a>
-        <span class="pill">Option la plus simple</span>
+    </section>
+
+    <!-- 4) CB / HelloAsso -->
+    <section class="card panel">
+      <h2 data-cb-title></h2>
+      <p class="small" data-cb-text></p>
+      <p class="small" data-cb-note></p>
+      <div class="btnRow">
+        <a class="btn" data-cb-btn href="#" target="_blank" rel="noopener">Payer par carte via HelloAsso</a>
+        <span class="pill">CB simple</span>
       </div>
-    </div>
+    </section>
   </div>
+
+  <script src="/assets/app.js"></script>
 </body>
 </html>
