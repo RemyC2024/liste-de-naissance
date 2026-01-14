@@ -9,7 +9,7 @@ backend:
   client_id: Ov23liWHmc3hdPIkb54I
 
 media_folder: "assets/uploads"
-public_folder: "/assets/uploads"
+public_folder: "assets/uploads"
 
 locale: "fr"
 
