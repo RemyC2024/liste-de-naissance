@@ -1,7 +1,7 @@
 {
   "items": [
-    { "order": 1, "title": "🍼 Kit “Biberon du futur”", "price": "15–45 €", "description": "On privilégie des lots d’occasion en très bon état (ou neuf si besoin), faciles à stériliser et adaptés à l’âge.", "image": "" },
-    { "order": 2, "title": "🧸 Le Doudou diplomate", "price": "10–35 €", "description": "Seconde main ok si parfait et nickel. Sinon neuf : on ne prend pas de risque sur ce point.", "image": "" },
+    { "order": 1, "title": "🍼 Kit “Biberon du futur”", "price": "entre 20 et 35 €", "description": "On privilégie des lots d’occasion en très bon état (ou neuf si besoin), faciles à stériliser et adaptés à l’âge.", "image": "" },
+    { "order": 2, "title": "🧸 Le Doudou tout doux ", "price": "entre 10 et 35 €", "description": "Seconde main ok si parfait et nickel. Sinon neuf : on ne prend pas de risque sur ce point.", "image": "" },
     { "order": 3, "title": "🌙 Gigoteuse “Anti-négociation”", "price": "15–60 €", "description": "On cherchera une gigoteuse d’occasion en super état, adaptée à la saison et aux tailles.", "image": "" },
     { "order": 4, "title": "🛏️ Trône de sommeil (cododo / lit)", "price": "80–300 €", "description": "Structure d’occasion complète et sûre. Matelas : selon recommandations, neuf possible.", "image": "" },
     { "order": 5, "title": "🚗 Capsule spatiale (siège auto)", "price": "120–380 €", "description": "Sécurité d’abord : occasion uniquement si historique clair, état irréprochable et normes OK.", "image": "" },
