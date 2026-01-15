@@ -1,17 +1,134 @@
 {
   "items": [
-    { "order": 1, "title": "🍼 Kit “Biberon du futur”", "price": "entre 20 et 35 €", "description": "On privilégie des lots d’occasion en très bon état (ou neuf si besoin), faciles à stériliser et adaptés à l’âge.", "image": "" },
-    { "order": 2, "title": "🧸 Le Doudou tout doux ", "price": "entre 10 et 35 €", "description": "Seconde main ok si parfait et nickel. Sinon neuf : on ne prend pas de risque sur ce point.", "image": "" },
-    { "order": 3, "title": "🌙 Gigoteuse “Anti-négociation”", "price": "15–60 €", "description": "On cherchera une gigoteuse d’occasion en super état, adaptée à la saison et aux tailles.", "image": "" },
-    { "order": 4, "title": "🛏️ Trône de sommeil (cododo / lit)", "price": "80–300 €", "description": "Structure d’occasion complète et sûre. Matelas : selon recommandations, neuf possible.", "image": "" },
-    { "order": 5, "title": "🚗 Capsule spatiale (siège auto)", "price": "120–380 €", "description": "Sécurité d’abord : occasion uniquement si historique clair, état irréprochable et normes OK.", "image": "" },
-    { "order": 6, "title": "🛒 Char d’exploration (poussette)", "price": "80–450 €", "description": "On cherchera une poussette d’occasion robuste, propre, complète (et facile à plier).", "image": "" },
-    { "order": 7, "title": "🤍 Cape de portage (écharpe / porte-bébé)", "price": "25–160 €", "description": "Seconde main idéale : marque fiable, modèle adapté, bon confort et réglages simples.", "image": "" },
-    { "order": 8, "title": "🛁 Station “Splash” (bain & soins)", "price": "10–70 €", "description": "Baignoire / transat de bain d’occasion + petits indispensables. On reste minimalistes.", "image": "" },
-    { "order": 9, "title": "👕 Pack “Mini-looks” (0–12 mois)", "price": "20–120 €", "description": "Lots d’occasion propres et en très bon état, adaptés aux saisons, sans sur-stock.", "image": "" },
-    { "order": 10, "title": "📚 Histoires du soir (pack livres)", "price": "10–70 €", "description": "Beaucoup d’occasion + médiathèque. Objectif : des livres solides et qu’on relit avec plaisir.", "image": "" },
-    { "order": 11, "title": "🪁 Kit “Éveil sans sur-stimulus”", "price": "10–90 €", "description": "Quelques jouets bien choisis (durables, qualitatifs), souvent d’occasion.", "image": "" },
-    { "order": 12, "title": "🚼 Stock “Anti-panique” (couches & lingettes)", "price": "20–140 €", "description": "On ajustera selon ce qui marche vraiment. But : éviter d’acheter trop, trop tôt.", "image": "" }
+    {
+      "order": 13,
+      "title": "🍼 Kit “Biberon du futur”",
+      "price": "20–35 €",
+      "description": "On privilégie des lots d’occasion en très bon état (ou neuf si besoin), faciles à stériliser et adaptés à l’âge.",
+      "image": "assets/images/BIB.webp",
+      "images": [
+        "assets/images/BIB.webp"
+      ]
+    },
+    {
+      "order": 2,
+      "title": "🧸 Le Doudou tout doux (et diplomate)",
+      "price": "10–35 €",
+      "description": "Seconde main ok si état parfait et nickel. Sinon neuf : on ne prend pas de risque sur ce point (surtout si on le perd et qu’on doit racheter exactement le même).",
+      "image": "assets/images/disney-doudou.webp",
+      "images": [
+        "assets/images/disney-doudou.webp"
+      ]
+    },
+    {
+      "order": 3,
+      "title": "🌙 Gigoteuse pour qu’il tape ses meilleurs moves",
+      "price": "15–40 €",
+      "description": "Gigoteuse d’occasion en super état, adaptée à la saison et aux tailles. Et résistante à ses pas de danse effrénés.",
+      "image": "assets/images/gigoteuse.jpg",
+      "images": [
+        "assets/images/gigoteuse.jpg"
+      ]
+    },
+    {
+      "order": 1,
+      "title": "🛏️ Trône de sommeil évolutif (aka le lit)",
+      "price": "≈ 200 €",
+      "description": "Structure d’occasion complète et sûre. Matelas : selon recommandations, neuf possible. Probablement l’objet le plus vénéré de l’appartement.",
+      "image": "assets/images/lit-bebe.webp",
+      "images": [
+        "assets/images/lit-bebe.webp"
+      ]
+    },
+    {
+      "order": 5,
+      "title": "🚗 Capsule spatiale (siège auto)",
+      "price": "≈ 250 €",
+      "description": "Sécurité d’abord : occasion uniquement si historique clair, état irréprochable et normes OK. Prêt pour l’abordage.",
+      "image": "assets/images/siege%20auto%20ferrari.webp",
+      "images": [
+        "assets/images/siege%20auto%20ferrari.webp"
+      ]
+    },
+    {
+      "order": 6,
+      "title": "🛒 Char d’exploration (poussette)",
+      "price": "jusqu’à 450 €",
+      "description": "Poussette d’occasion robuste, propre, complète et facile à plier. Tuning proscrit, efficacité exigée.",
+      "image": "assets/images/pousette%20tuning.jpeg",
+      "images": [
+        "assets/images/pousette%20tuning.jpeg"
+      ]
+    },
+    {
+      "order": 7,
+      "title": "🤍 Cape de portage (porte-bébé)",
+      "price": "≈ 100 €",
+      "description": "Seconde main idéale : marque fiable, modèle adapté, bon confort et réglages simples. Pour balades, voyages… et peut-être rando.",
+      "image": "assets/images/porte%20bébé.webp",
+      "images": [
+        "assets/images/porte%20bébé.webp"
+      ]
+    },
+    {
+      "order": 8,
+      "title": "🛁 Station “Splash” (bain & soins)",
+      "price": "≈ 50 €",
+      "description": "Baignoire / transat de bain d’occasion + petits indispensables. Simple, efficace et propre.",
+      "image": "assets/images/baignoire.jpg",
+      "images": [
+        "assets/images/baignoire.jpg"
+      ]
+    },
+    {
+      "order": 9,
+      "title": "👕 Pack “Mini-looks” (0–12 mois)",
+      "price": "20–120 €",
+      "description": "Lots d’occasion en très bon état, adaptés aux saisons, sans sur-stock. Baby stylé, mais minimaliste.",
+      "image": "assets/images/look.webp",
+      "images": [
+        "assets/images/look.webp"
+      ]
+    },
+    {
+      "order": 10,
+      "title": "📚 Histoires du soir (pack livres)",
+      "price": "≈ 40 €",
+      "description": "Beaucoup d’occasion + médiathèque. Des livres solides, agréables à relire… encore et encore.",
+      "image": "assets/images/livre%20mdr.jpg",
+      "images": [
+        "assets/images/livre%20mdr.jpg"
+      ]
+    },
+    {
+      "order": 11,
+      "title": "🪁 Kit “Éveil sans sur-stimulus”",
+      "price": "≈ 45 €",
+      "description": "Quelques jouets bien choisis, durables et qualitatifs, souvent d’occasion. Spoiler : on risque d’y jouer aussi.",
+      "image": "assets/images/jouet.webp",
+      "images": [
+        "assets/images/jouet.webp"
+      ]
+    },
+    {
+      "order": 12,
+      "title": "🚼 Stock “Anti-panique” (couches & lingettes)",
+      "price": "≈ 40 € / mois",
+      "description": "On ajuste selon ce qui fonctionne vraiment. Objectif : éviter d’acheter trop, trop tôt. Et cette fois, uniquement du neuf.",
+      "image": "assets/images/couche.jpeg",
+      "images": [
+        "assets/images/couche.jpeg"
+      ]
+    },
+    {
+      "order": 4,
+      "title": "🧳 Lit parapluie (nomade mais sérieux)",
+      "price": "50–120 €",
+      "description": "Pratique pour les déplacements, nuits chez les proches ou vacances. Occasion possible si très bon état, matelas propre et conforme.",
+      "image": "assets/images/polochon2.webp",
+      "images": [
+        "assets/images/polochon2.webp"
+      ]
+    }
   ]
 }
-
