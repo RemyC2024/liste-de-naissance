@@ -115,9 +115,7 @@
       "price": "50–120 €",
       "description": "Pratique pour les déplacements, nuits chez les proches ou vacances. Occasion possible si très bon état, matelas propre et conforme.",
       "image": "assets/images/polochon2.webp",
-      "images": [
-        "assets/images/polochon2.webp"
-      ]
+      "images": ["assets/images/polochon2.webp"]
     },
     {
       "order": 15,
@@ -125,28 +123,30 @@
       "price": "≈ 150 €",
       "description": "On privilégie l’occasion en très bon état pour le matériel (stérilisateur / chauffe-biberon), et du neuf si besoin sur les éléments sensibles (hygiène). Objectif : pratique et simple au quotidien.",
       "image": "assets/images/BIB.webp",
-      "images": [        "assets/images/BIB.webp"]
+      "images": ["assets/images/BIB.webp"]
     },
     {
       "order": 16,
       "title": "📟 Babyphone ALLO À L’HUILE",
       "price": "40–180 €",
       "description": "On cherche un modèle fiable (audio ou vidéo), simple à utiliser. Occasion OK si batterie/chargeur nickel et fonctionnement testé.",
-      "image": ""
+      "image": "assets/images/BABYPHONE.jpg",
+      "images": ["assets/images/BABYPHONE.jpg"]
     },
     {
       "order": 17,
       "title": "🌟 Veilleuse",
       "price": "10–60 €",
       "description": "Une lumière douce pour les nuits (et les biberons à moitié endormi·e). Occasion OK si propre et en parfait état.",
-      "image": ""
-    },
+      "image": "assets/images/VEILLEUSE.jpg",
+      "images": ["assets/images/VEILLEUSE.jpg"] },
     {
       "order": 19,
       "title": "🎒 Sac à langer",
       "price": "25–120 €",
       "description": "On cherche un sac pratique, résistant, facile à nettoyer (poches, attache poussette si possible). Occasion OK si très propre. Si vous avez des recommandations, on est preneur.ses ! ",
-      "image": ""
+      "image": "assets/images/sacaalanger.webp",
+      "images": ["assets/images/sacaalanger.webp"]
     } 
   ]
 }
