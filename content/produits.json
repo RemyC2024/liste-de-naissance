@@ -130,5 +130,47 @@
         "assets/images/polochon2.webp"
       ]
     }
+    {
+      "order": 14,
+      "title": "🛏️ Chambre : lit + commode + table à langer",
+      "price": "jusqu’à 500 €",
+      "description": "On vise un ensemble solide et safe, plutôt d’occasion en très bon état (avec historique/notice si possible). Si matelas : selon recommandations, neuf possible.",
+      "image": ""
+    },
+    {
+      "order": 15,
+      "title": "🥣 La comida de bébé : biberons + stérilisateur + chauffe-biberon + tire-lait",
+      "price": "≈ 150 €",
+      "description": "On privilégie l’occasion en très bon état pour le matériel (stérilisateur / chauffe-biberon), et du neuf si besoin sur les éléments sensibles (hygiène). Objectif : pratique et simple au quotidien.",
+      "image": ""
+    },
+    {
+      "order": 16,
+      "title": "📟 Babyphone",
+      "price": "40–180 €",
+      "description": "On cherche un modèle fiable (audio ou vidéo), simple à utiliser. Occasion OK si batterie/chargeur nickel et fonctionnement testé.",
+      "image": ""
+    },
+    {
+      "order": 17,
+      "title": "🌟 Veilleuse",
+      "price": "10–60 €",
+      "description": "Une lumière douce pour les nuits (et les biberons à moitié endormi·e). Occasion OK si propre et en parfait état.",
+      "image": ""
+    },
+    {
+      "order": 18,
+      "title": "🪑 Transat",
+      "price": "30–160 €",
+      "description": "Occasion idéale si état impeccable et stable. Confort + sécurité, sans gadgets inutiles.",
+      "image": ""
+    },
+    {
+      "order": 19,
+      "title": "🎒 Sac à langer",
+      "price": "25–120 €",
+      "description": "On cherche un sac pratique, résistant, facile à nettoyer (poches, attache poussette si possible). Occasion OK si très propre.",
+      "image": ""
+    } 
   ]
 }
