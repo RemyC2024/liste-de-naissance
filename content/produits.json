@@ -1,16 +1,6 @@
 {
   "items": [
     {
-      "order": 13,
-      "title": "🍼 Kit “Biberon du futur”",
-      "price": "20–35 €",
-      "description": "On privilégie le neuf sur les biberons, faciles à stériliser et adaptés à l’âge.",
-      "image": "assets/images/BIB.webp",
-      "images": [
-        "assets/images/BIB.webp"
-      ]
-    },
-    {
       "order": 2,
       "title": "🧸 Le Doudou tout doux (et diplomate)",
       "price": "10–35 €",
@@ -32,9 +22,9 @@
     },
     {
       "order": 1,
-      "title": "🛏️ Trône de sommeil évolutif (aka le lit)",
-      "price": "≈ 200 €",
-      "description": "On à repéré ce modèle chez auber, plus qu'a aller le chercher deux fois moins cher sur le bon coin coin  ! Probablement l’objet le plus vénéré de l’appartement.",
+      "title": "La Chambre de baby (RIP le bureau de Rémy) ",
+      "price": "≈ 500 €",
+      "description": "On cherche un lit avec une structure d’occasion complète et sûre. Matelas : selon recommandation, neuf possible. Ce sera sûrement l’objet vénéré de l’appartement ! Avec un placard pour mettre ses tout petits habits de petit bébé, et une déco qu’on essaiera pas trop maximaliste.",
       "image": "assets/images/lit-bebe.webp",
       "images": [
         "assets/images/lit-bebe.webp"
@@ -82,9 +72,8 @@
     },
     {
       "order": 9,
-      "title": "👕 Pack “Mini-looks” (0–12 mois)",
-      "price": "20–120 €",
-      "description": "Lots d’occasion en très bon état, adaptés aux saisons, sans sur-stock. Baby stylé, mais minimaliste.",
+      "title": "👕 Pack “Mini-looks” (0–12 mois)"
+      "description": "on ne veut pas trop accumuler, à part quelques vêtements qu’on gardera en souvenir neuf, on aimerait surtout de la seconde main !",
       "image": "assets/images/look.webp",
       "images": [
         "assets/images/look.webp"
@@ -131,22 +120,16 @@
       ]
     },
     {
-      "order": 14,
-      "title": "🛏️ Chambre : lit + commode + table à langer",
-      "price": "jusqu’à 500 €",
-      "description": "On vise un ensemble solide et safe, plutôt d’occasion en très bon état (avec historique/notice si possible). Si matelas : selon recommandations, neuf possible.",
-      "image": ""
-    },
-    {
       "order": 15,
       "title": "🥣 La comida de bébé : biberons + stérilisateur + chauffe-biberon + tire-lait",
       "price": "≈ 150 €",
       "description": "On privilégie l’occasion en très bon état pour le matériel (stérilisateur / chauffe-biberon), et du neuf si besoin sur les éléments sensibles (hygiène). Objectif : pratique et simple au quotidien.",
-      "image": ""
+      "image": "assets/images/BIB.webp",
+      "images": [        "assets/images/BIB.webp"]
     },
     {
       "order": 16,
-      "title": "📟 Babyphone",
+      "title": "📟 Babyphone ALLO À L’HUILE",
       "price": "40–180 €",
       "description": "On cherche un modèle fiable (audio ou vidéo), simple à utiliser. Occasion OK si batterie/chargeur nickel et fonctionnement testé.",
       "image": ""
@@ -159,17 +142,10 @@
       "image": ""
     },
     {
-      "order": 18,
-      "title": "🪑 Transat",
-      "price": "30–160 €",
-      "description": "Occasion idéale si état impeccable et stable. Confort + sécurité, sans gadgets inutiles.",
-      "image": ""
-    },
-    {
       "order": 19,
       "title": "🎒 Sac à langer",
       "price": "25–120 €",
-      "description": "On cherche un sac pratique, résistant, facile à nettoyer (poches, attache poussette si possible). Occasion OK si très propre.",
+      "description": "On cherche un sac pratique, résistant, facile à nettoyer (poches, attache poussette si possible). Occasion OK si très propre. Si vous avez des recommandations, on est preneur.ses ! ",
       "image": ""
     } 
   ]
