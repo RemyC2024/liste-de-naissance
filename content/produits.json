@@ -1,0 +1,64 @@
+{
+  "items": [
+    {
+      "order": 1,
+      "title": "La Chambre de baby",
+      "mode": "participation",
+      "status": "disponible",
+      "price": "≈ 500 €",
+      "description": "Ce sera sûrement l’objet vénéré de l’appartement ! Avec un placard pour mettre ses tout petits habits de petit bébé, et une déco qu’on essaiera pas trop maximaliste. On a déjà eu un coup de cœur alors votre participation est la bienvenue !",
+      "image": "assets/images/chambre.png",
+      "images": ["assets/images/chambre.png"],
+      "product_link": "",
+      "reserved_note": ""
+    },
+    {
+      "order": 2,
+      "title": "🧸 Le Doudou tout doux (et diplomate)",
+      "mode": "reservation",
+      "status": "disponible",
+      "price": "",
+      "description": "Doudou veloudoux Tricératops Ops",
+      "image": "assets/images/doudou.png",
+      "images": ["assets/images/doudou.png"],
+      "product_link": "https://www.madeinbebe.com/boutique/fr/tigastegi-ts-doudou-veloudoux-dino-ops-tigastegi-bleu-noukies/a268426",
+      "reserved_note": ""
+    },
+    {
+      "order": 3,
+      "title": "🌙 Gigoteuse pour qu’il tape ses meilleurs moves",
+      "mode": "reservation",
+      "status": "disponible",
+      "price": "",
+      "description": "Gigoteuse adaptée à la saison et aux tailles. Et à ses pas de danse effréné !",
+      "image": "assets/images/gigoteuse.png",
+      "images": ["assets/images/gigoteuse.png"],
+      "product_link": "https://www.vertbaudet.fr/gigoteuse-ete-en-gaze-de-coton-dans-les-nuages-raye-bleu.htm?ProductId=341021464&FiltreCouleur=0544&tool=layer_algolia&p=22&queryID=bde6b19a4e2a9c716761a33cac54649c",
+      "reserved_note": ""
+    },
+    {
+      "order": 4,
+      "title": "🚗 Capsule spatiale (siège auto)",
+      "mode": "participation",
+      "status": "disponible",
+      "price": "150 €",
+      "description": "Sécurité d’abord. On part sur un modèle NUNA compatible avec la poussette !",
+      "image": "assets/images/siegeauto.png",
+      "images": ["assets/images/siegeauto.png"],
+      "product_link": "",
+      "reserved_note": ""
+    },
+    {
+      "order": 5,
+      "title": "🛒 Char d’exploration (poussette)",
+      "mode": "participation",
+      "status": "disponible",
+      "price": "450 €",
+      "description": "Poussette robuste, complète et facile à plier. Tuning proscrit, efficacité exigée.",
+      "image": "assets/images/poussette.png",
+      "images": ["assets/images/poussette.png"],
+      "product_link": "",
+      "reserved_note": ""
+    }
+  ]
+}

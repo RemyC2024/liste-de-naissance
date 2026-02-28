@@ -1,6 +1,6 @@
-function el(tag, attrs={}, children=[]) {
+function el(tag, attrs = {}, children = []) {
   const n = document.createElement(tag);
-  Object.entries(attrs).forEach(([k,v]) => {
+  Object.entries(attrs).forEach(([k, v]) => {
     if (k === "class") n.className = v;
     else if (k === "html") n.innerHTML = v;
     else n.setAttribute(k, v);
@@ -13,126 +13,151 @@ function el(tag, attrs={}, children=[]) {
   return n;
 }
 
-function escapeXml(s){
-  return s.replace(/[<>&'"]/g,c=>({
-    '<':'&lt;','>':'&gt;','&':'&amp;',"'":'&apos;','"':'&quot;'
-  }[c]));
-}
-
-// Image de fallback (si aucune image uploadée)
-function svgFallback(label, emoji) {
-  const svg = `
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="450">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#E7F4EF"/>
-      <stop offset="0.42" stop-color="#FFFFFF"/>
-      <stop offset="1" stop-color="#FDE7EE"/>
-    </linearGradient>
-  </defs>
-  <rect width="900" height="450" fill="url(#g)"/>
-  <circle cx="170" cy="110" r="120" fill="#CFE7DE" opacity="0.55"/>
-  <circle cx="770" cy="120" r="130" fill="#F3C8D3" opacity="0.55"/>
-  <rect x="90" y="110" width="720" height="240" rx="26" fill="#FFFFFF" opacity="0.88"/>
-  <text x="140" y="220" font-size="86" font-family="system-ui">${emoji}</text>
-  <text x="240" y="208" font-size="34" font-weight="700" fill="#1F2A27" font-family="system-ui">
-    ${escapeXml(label)}
-  </text>
-  <text x="240" y="250" font-size="20" fill="#556764" font-family="system-ui">
-    Objet symbolique • seconde main
-  </text>
-</svg>`;
-  return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
-}
-
 async function getJSON(path){
   const r = await fetch(path, {cache:"no-store"});
   if(!r.ok) throw new Error(`Impossible de charger ${path}`);
   return await r.json();
 }
 
-// Page index
-async function initIndex(){
-  const site = await getJSON("content/site.json");
-  const produits = await getJSON("content/produits.json");
+function normStatus(s){
+  const v = String(s || "").toLowerCase().trim();
+  if (v === "reserve" || v === "réservé" || v === "reserved") return "reserve";
+  return "disponible";
+}
 
-  document.querySelector("[data-site-title]").textContent = site.title;
-  document.querySelector("[data-site-subtitle]").textContent = site.subtitle;
+function normMode(m){
+  const v = String(m || "").toLowerCase().trim();
+  return v === "reservation" ? "reservation" : "participation";
+}
 
-  const badges = document.querySelector("[data-site-badges]");
-  badges.innerHTML = "";
-  (site.badges || []).forEach(b =>
-    badges.appendChild(el("span",{class:"badge"}, b))
-  );
+function openReserveModal(itemTitle){
+  const overlay = el("div", { class: "modalOverlay" });
+  const modal = el("div", { class: "modalCard panel" }, [
+    el("h2", {}, "🎁 Réserver ce cadeau"),
+    el("p", { class: "small" },
+      "Merci 💛 Pour éviter les doublons, on confirme la réservation via le formulaire. " +
+      "Après ça, on vous envoie l’adresse de livraison."
+    ),
+    el("div", { class: "note" }, [
+      el("div", { class: "small" }, "Dans le formulaire, indiquez le cadeau :"),
+      el("div", { style:"margin-top:6px;font-weight:800;color:var(--ink)" }, itemTitle)
+    ]),
+    el("div", { class:"btnRow", style:"margin-top:12px" }, [
+      el("a", {
+        class:"btn",
+        href:"https://forms.gle/7KBqUQe1orpDFuiV7",
+        target:"_blank",
+        rel:"noopener noreferrer"
+      }, "Ouvrir le formulaire"),
+      el("a", { class:"ghost", href:"#"}, "Fermer")
+    ])
+  ]);
 
-  const grid = document.querySelector("[data-products]");
-  grid.innerHTML = "";
+  overlay.addEventListener("click", (e) => { if (e.target === overlay) overlay.remove(); });
+  modal.querySelector(".ghost").addEventListener("click", (e) => { e.preventDefault(); overlay.remove(); });
 
-  const items = (produits.items || []).slice()
-    .sort((a,b)=>(a.order||0)-(b.order||0));
+  overlay.appendChild(modal);
+  document.body.appendChild(overlay);
+}
+
+// inject CSS modal (léger)
+(function(){
+  const css = `
+  .modalOverlay{ position:fixed; inset:0; background:rgba(0,0,0,.28); display:flex; align-items:center; justify-content:center; padding:18px; z-index:9999; }
+  .modalCard{ max-width:560px; width:100%; }
+  a.btn.disabled{ opacity:.55; pointer-events:none; filter: grayscale(15%); }
+  `;
+  const s = document.createElement("style");
+  s.textContent = css;
+  document.head.appendChild(s);
+})();
+
+function renderItems(gridEl, items){
+  gridEl.innerHTML = "";
 
   items.forEach(item => {
-    const emoji = (item.title.match(/^\s*([^\s]+)/)?.[1]) || "🌿";
-    const imgSrc = item.image && item.image.trim()
-      ? item.image
-      : svgFallback(item.title.replace(/^\s*[^\s]+\s*/,""), emoji);
+    const status = normStatus(item.status);
+    const mode = normMode(item.mode);
+    const reservedNote = String(item.reserved_note || "").trim();
 
-    grid.appendChild(
-      el("article",{class:"card"},[
-        el("div",{class:"img"},
-          el("img",{src:imgSrc, alt:item.title})
-        ),
-        el("div",{class:"body"},[
-          el("h3",{class:"title"}, item.title),
-          el("div",{class:"price"}, `Montant indicatif : ${item.price}`),
-          el("p",{class:"desc"}, item.description),
-          el("div",{class:"spacer"}),
-          el("a",{class:"btn", href:"paiement.html"}, "Participer")
+    const statusLabel = status === "reserve" ? "Réservé" : "Disponible";
+    const statusClass = status === "reserve" ? "statusBadge reserved" : "statusBadge";
+
+    // Boutons
+    let actions = [];
+
+    if (mode === "participation") {
+      // financer
+      const btn = el("a", { class: status==="reserve" ? "btn disabled" : "btn", href: "paiement.html" },
+        status==="reserve" ? "Déjà réservé 💛" : "Participer"
+      );
+      actions.push(btn);
+    } else {
+      // reservation: bouton "Acheter" (lien produit) + "Réserver" (adresse via form)
+      const buyDisabled = status === "reserve" || !item.product_link;
+      const buyBtn = el("a", {
+        class: buyDisabled ? "ghost disabled" : "ghost",
+        href: buyDisabled ? "#" : item.product_link,
+        target: buyDisabled ? null : "_blank",
+        rel: buyDisabled ? null : "noopener noreferrer"
+      }, "Acheter");
+
+      const reserveBtn = el("a", { class: status==="reserve" ? "btn disabled" : "btn", href:"#"},
+        status==="reserve" ? "Déjà réservé 💛" : "Réserver"
+      );
+
+      if (status !== "reserve") {
+        reserveBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          openReserveModal(item.title);
+        });
+      }
+
+      actions.push(buyBtn, reserveBtn);
+    }
+
+    const noteLine = (status === "reserve" && reservedNote)
+      ? el("div", { class:"small", style:"margin-top:6px" }, `✍️ ${reservedNote}`)
+      : null;
+
+    const priceText = item.price && item.price.trim() ? item.price : "—";
+
+    gridEl.appendChild(
+      el("article", { class:"card" }, [
+        el("div", { class:"img" }, el("img", { src:item.image, alt:item.title })),
+        el("div", { class:"body" }, [
+          el("div", { class:"statusRow" }, [
+            el("h3", { class:"title" }, item.title),
+            el("span", { class: statusClass }, [
+              el("span", { class:"statusDot" }),
+              statusLabel
+            ])
+          ]),
+          el("div", { class:"price" }, `Montant indicatif : ${priceText}`),
+          el("p", { class:"desc" }, item.description || ""),
+          noteLine,
+          el("div", { class:"spacer" }),
+          el("div", { class:"btnRow" }, actions)
         ])
       ])
     );
   });
 }
 
-// Page paiement
-async function initPaiement(){
-  const p = await getJSON("content/paiement.json");
+async function initIndex(){
+  const produits = await getJSON("content/produits.json");
 
-  document.querySelector("[data-pay-title]").textContent = p.title;
-  document.querySelector("[data-pay-intro]").textContent = p.intro;
+  const gridParticipation = document.querySelector("[data-products-participation]");
+  const gridReservation = document.querySelector("[data-products-reservation]");
 
-  document.querySelector("[data-form-title]").textContent = p.bloc_form.title;
-  document.querySelector("[data-form-text]").textContent = p.bloc_form.text;
-  const iframe = document.querySelector("[data-form-iframe]");
-  iframe.src = p.bloc_form.google_forms_embed_url;
-  iframe.height = String(p.bloc_form.iframe_height || 860);
+  const items = (produits.items || []).slice().sort((a,b)=>(a.order||0)-(b.order||0));
+  const participation = items.filter(i => normMode(i.mode) === "participation");
+  const reservation = items.filter(i => normMode(i.mode) === "reservation");
 
-  document.querySelector("[data-lydia-title]").textContent = p.bloc_lydia.title;
-  document.querySelector("[data-lydia-text]").textContent = p.bloc_lydia.text;
-  document.querySelector("[data-lydia-handle]").textContent = p.bloc_lydia.handle || "";
-
-  const lydiaBtn = document.querySelector("[data-lydia-btn]");
-  if (p.bloc_lydia.link && p.bloc_lydia.link.trim()) {
-    lydiaBtn.href = p.bloc_lydia.link;
-    lydiaBtn.style.display = "inline-block";
-  } else {
-    lydiaBtn.style.display = "none";
-  }
-
-  document.querySelector("[data-wero-title]").textContent = p.bloc_wero.title;
-  document.querySelector("[data-wero-text]").textContent = p.bloc_wero.text;
-
-  document.querySelector("[data-cb-title]").textContent = p.bloc_cb.title;
-  document.querySelector("[data-cb-text]").textContent = p.bloc_cb.text;
-  document.querySelector("[data-cb-note]").textContent = p.bloc_cb.note;
-
-  const cbBtn = document.querySelector("[data-cb-btn]");
-  cbBtn.href = p.bloc_cb.helloasso_link;
-  cbBtn.textContent = p.bloc_cb.button_text || "Payer par carte via HelloAsso";
+  if (gridParticipation) renderItems(gridParticipation, participation);
+  if (gridReservation) renderItems(gridReservation, reservation);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const page = document.body.getAttribute("data-page");
-  if (page === "index") initIndex().catch(console.error);
-  if (page === "paiement") initPaiement().catch(console.error);
+  initIndex().catch(console.error);
 });
