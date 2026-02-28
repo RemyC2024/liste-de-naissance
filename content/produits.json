@@ -85,18 +85,6 @@
       "reserved_note": ""
     },
     {
-      "order": 8,
-      "title": "Chauffe biberon",
-      "mode": "participation",
-      "status": "disponible",
-      "price": "25",
-      "description": "Pour éviter les négociations nocturnes à 3h du matin avec un bébé affamé. Simple, rapide, efficace — histoire que tout le monde se rendorme le plus vite possible.",
-      "image": "assets/images/chauffebib.jpg",
-      "images": ["assets/images/chauffebib.jpg"],
-      "product_link": "",
-      "reserved_note": ""
-    },
-    {
       "order": 9,
       "title": "Trousse de soin bébé",
       "mode": "reservation",
