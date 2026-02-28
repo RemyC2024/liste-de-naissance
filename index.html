@@ -4,78 +4,92 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Liste de naissance de Myriam & Rémy</title>
-  <link rel="stylesheet" href="assets/style.css?v=5" />
+  <link rel="stylesheet" href="assets/style.css?v=7" />
 </head>
 
-<body data-page="index">
+<body>
   <div class="wrap">
 
-    <!-- ENCARD 1 : Titre + intro + important -->
+    <!-- HERO -->
     <section class="panel hero heroPanel">
-      <h1 data-site-title>Liste de naissance de Myriam & Rémy</h1>
-      <p class="sub" data-site-subtitle></p>
-
-        Nous attendons un petit garçon qui montrera le bout de son nez fin juin/début juillet, et suite à la demande grandissante de ses futur.e.s fans, vous trouverez ici notre liste de naissance !      </p>
-
-
-      <div class="heroFooter">
-        <div class="badges" data-site-badges></div>
-        <div class="btnRow">
-        </div>
-      </div>
+      <h1>Liste de naissance de Myriam & Rémy</h1>
+      <p class="sub">
+        Nous attendons un petit garçon fin juin / début juillet 💛  
+        Suite à la demande grandissante de ses futur·e·s fans, voici notre liste de naissance.
+      </p>
     </section>
-    
 
-    <!-- ENCARD 2 : Explication seconde main -->
+    <!-- EXPLICATION -->
     <section class="panel" style="margin-top:14px">
-      <h2>🌿 Notre idée : une liste de naissance “seconde main”</h2>
+      <h2>🌿 Notre fonctionnement</h2>
+
       <p>
-        Plutôt qu’une liste classique à offrir dans des magasins, on préfère acheter des articles d’occasion en très bon état (et certains neufs pour l'hygiène, sécurité, etc.).
+        Nous privilégions l’achat d'un maximum d’articles en seconde main ! Les dons sont les bienvenus, n'hésitez pas à nous contacter !
       </p>
+
       <p>
-        Les produits de cette liste servent donc de <strong>repères</strong> : votre participation nous aide à trouver
-        les bonnes opportunités au bon moment, selon les besoins réels.
-      </p>
+        👉 Les cadeaux à financer seront achetés par nous au bon moment en seconde main, l'idée est de nous aider à contribuer à ces produits au meilleur prix.      </p>
+
       <p>
-        Les valeurs sont approximatives - les dons sont bienvenus si très bon état <3
+        👉 Les cadeaux “neufs” peuvent être directement achetés par vous et envoyé chez nous !
       </p>
-      <p style="margin-bottom:0">
+
+      <p class="small" style="margin-bottom:0">
+        Pour rester discrets, l’adresse n’est pas affichée publiquement 💛
       </p>
     </section>
 
+    <!-- SECTION PARTICIPATION -->
     <section class="card panel">
-      <h2>✉️ Formulaire de contact</h2>
-      <p>
-        Si vous avez des idées, des conseils ou des petits mots à nous partager, c’est ici 💛
-      </p>
-    
+      <h2>💛 Cadeaux à financer</h2>
+      <p>Participation libre pour les achats seconde main ou les gros objets.</p>
+
       <div class="btnRow" style="margin-top:10px">
-        <a class="btn" href="https://forms.gle/7KBqUQe1orpDFuiV7" target="_blank" rel="noopener noreferrer">
-          Remplir le formulaire
+        <a class="btn" href="paiement.html">Participer</a>
+      </div>
+
+      <!-- ✅ TUILES "A FINANCER" -->
+      <section class="grid" data-products-participation style="margin-top:16px"></section>
+    </section>
+
+    <!-- SECTION RESERVATION -->
+    <section class="card panel">
+      <h2>🎁 Cadeaux neufs à réserver</h2>
+      <p>
+        Merci de réserver avant achat pour éviter les doublons.
+        Après réservation, on vous envoie l’adresse de livraison 💛
+      </p>
+
+      <div class="btnRow" style="margin-top:10px">
+        <a class="ghost" href="https://forms.gle/7KBqUQe1orpDFuiV7" target="_blank">
+          Réserver un cadeau
+        </a>
+      </div>
+
+      <!-- ✅ TUILES "A RESERVER" -->
+      <section class="grid" data-products-reservation style="margin-top:16px"></section>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="card panel">
+      <h2>✉️ Nous écrire</h2>
+      <p>
+        Un mot, une question, une idée ou un objet à donner ?
+      </p>
+
+      <div class="btnRow" style="margin-top:10px">
+        <a class="ghost" href="https://forms.gle/7KBqUQe1orpDFuiV7" target="_blank">
+          Formulaire de contact
         </a>
       </div>
     </section>
 
-    <!-- 12 tuiles -->
-    <section class="grid" data-products style="margin-top:16px"></section>
+    <!-- ✅ TUILES PRODUITS -->
+    <section class="grid" data-products style="margin-top:20px"></section>
 
   </div>
 
-  <script src="assets/app.js?v=5"></script>
-
-  <!-- Style du bandeau "Important" (si tu ne l'as pas déjà mis dans style.css) -->
-  <style>
-    .important-banner{
-      margin-top: 12px;
-      padding: 12px 14px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, var(--pink2), #ffffff 55%, var(--sage2));
-      border: 1px dashed rgba(85, 103, 100, 0.40);
-      color: var(--ink);
-      font-size: 14px;
-      line-height: 1.45;
-      box-shadow: 0 6px 18px rgba(31, 42, 39, 0.06);
-    }
-  </style>
+  <!-- ✅ JS (ultra important) -->
+  <script src="assets/app.js?v=7"></script>
 </body>
 </html>
