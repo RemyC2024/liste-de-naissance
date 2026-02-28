@@ -59,7 +59,7 @@
     {
       "order": 9,
       "title": "👕 Pack “Mini-looks” (0–12 mois)",
-      "price": "",
+      "price": "20–120 €",
       "description": "On ne veut pas trop accumuler, à part quelques vêtements qu’on gardera en souvenir neuf, on aimerait surtout de la seconde main !",
       "image": "assets/images/look.webp",
       "images": ["assets/images/look.webp"]
