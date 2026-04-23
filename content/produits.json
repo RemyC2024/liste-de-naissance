@@ -28,7 +28,7 @@
 "order": 3,
 "title": "🌙 Gigoteuse pour qu’il tape ses meilleurs moves",
 "mode": "reservation",
-"status": "disponible",
+"status": "reserve",
 "price": "29,99",
 "description": "Gigoteuse adaptée à la saison et aux tailles. Et à ses pas de danse effréné !",
 "image": "assets/images/gigoteuse.png",
@@ -43,8 +43,8 @@
 "status": "disponible",
 "price": "150",
 "description": "Sécurité d’abord. On part sur un modèle NUNA compatible avec la poussette !",
-"image": "assets/images/poussette.png",
-"images": ["assets/images/poussette.png"],
+"image": "assets/images/siegeauto.png",
+"images": ["assets/images/siegeauto.png"],
 "product_link": "",
 "reserved_note": ""
 },
@@ -55,8 +55,8 @@
 "status": "disponible",
 "price": "450€",
 "description": "Poussette robuste, complète et facile à plier. Tuning proscrit, efficacité exigée.",
-"image": "assets/images/siegeauto.png",
-"images": ["assets/images/siegeauto.png"],
+"image": "assets/images/poussette.png",
+"images": ["assets/images/poussette.png"],
 "product_link": "",
 "reserved_note": ""
 },
@@ -145,30 +145,6 @@
 "reserved_note": ""
 },
 {
-"order": 13,
-"title": "Petite combinaison (animaux, dinosaure, fruit, tout est adorable)",
-"mode": "reservation",
-"status": "disponible",
-"price": "10",
-"description": "On trouve ça évidemment trop mignon ! Mais à privilégier pour cet automne/hiver donc minimum taille 3-6 mois",
-"image": "assets/images/vinted.png",
-"images": ["assets/images/vinted.png"],
-"product_link": "https://www.google.com/search?q=https://www.vinted.fr/catalog%3Fsearch_text%3Dcombinaison%2520ours%26catalog[]=1193",
-"reserved_note": ""
-},
-{
-"order": 14,
-"title": "Lot vêtement été bébé (bodies, tshirt)",
-"mode": "reservation",
-"status": "disponible",
-"price": "10",
-"description": "Pour qu'il soit à l'aise tout l'été !",
-"image": "assets/images/vinted.png",
-"images": ["assets/images/vinted.png"],
-"product_link": "https://www.google.com/search?q=https://www.vinted.fr/catalog%3Fsearch_text%3Dlot%2520%25C3%25A9t%25C3%25A9%26catalog[]=1193",
-"reserved_note": ""
-},
-{
 "order": 15,
 "title": "Tétines",
 "mode": "reservation",
@@ -219,7 +195,7 @@
 {
 "order": 19,
 "title": "🎒 Sac à langer Dikaslon",
-"mode": "reservation",
+"mode": "participation",
 "status": "disponible",
 "price": "45,99",
 "description": "Le sac à dos indispensable pour transporter toute la logistique de bébé sans ressembler à un randonneur perdu. Pratique, élégant et plein de poches !",
