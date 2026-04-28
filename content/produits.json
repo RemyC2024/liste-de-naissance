@@ -88,7 +88,7 @@
 "order": 8,
 "title": "💆‍♀️ Moment détente : Massage Maman + Bébé",
 "mode": "participation",
-"status": "disponible",
+"status": "reserve",
 "price": "80",
 "description": "Parce que maman aussi a besoin d'un petit moment de douceur pour récupérer, et bébé pour découvrir ses sens. Un instant suspendu pour se relaxer ensemble.",
 "image": "assets/images/massage.png",
@@ -118,18 +118,6 @@
 "image": "assets/images/thermometre.png",
 "images": ["assets/images/thermometre.png"],
 "product_link": "https://www.vertbaudet.fr/thermometre-de-bain-et-d-ambiance-poulpe-bleu.htm?ProductId=703400303&FiltreCouleur=6409&tool=layer_algolia&p=4&queryID=4bcbb8f08a2e3ab0fe6dbf54457c58b7",
-"reserved_note": ""
-},
-{
-"order": 11,
-"title": "Thermomètre laser",
-"mode": "reservation",
-"status": "disponible",
-"price": "17,99",
-"description": "Pour surveiller les petites températures sans réveiller le dragon endormi. Rapide, précis, et surtout sans drame inutile.",
-"image": "assets/images/thermometre2.png",
-"images": ["assets/images/thermometre2.png"],
-"product_link": "https://www.google.com/search?q=https://www.amazon.fr/Thermom%25C3%25A8tre-Frontal-Thermometre-Num%25C3%25A9rique-Infrarouge/dp/B0CKXCDC4M/",
 "reserved_note": ""
 },
 {
