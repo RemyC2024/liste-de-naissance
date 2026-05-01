@@ -93,27 +93,33 @@ function renderItems(gridEl, items){
       );
       actions.push(btn);
     } else {
-      // reservation: bouton "Acheter" (lien produit) + "Réserver" (adresse via form)
-      const buyDisabled = status === "reserve" || !item.product_link;
+
+      const isReserved = status === "reserve";
+
+      // 👉 Bouton ACHETER (noir)
       const buyBtn = el("a", {
-        class: buyDisabled ? "ghost disabled" : "ghost",
-        href: buyDisabled ? "#" : item.product_link,
-        target: buyDisabled ? null : "_blank",
-        rel: buyDisabled ? null : "noopener noreferrer"
+        class: isReserved || !item.product_link ? "btn disabled" : "btn",
+        href: isReserved || !item.product_link ? "#" : item.product_link,
+        target: isReserved ? null : "_blank",
+        rel: isReserved ? null : "noopener noreferrer"
       }, "Acheter");
 
-      const reserveBtn = el("a", { class: status==="reserve" ? "btn disabled" : "btn", href:"#"},
-        status==="reserve" ? "Déjà réservé 💛" : "Réserver"
-      );
+      // 👉 Bouton DISPONIBLE / DÉJÀ RÉSERVÉ (blanc)
+      const dispoBtn = el("a", {
+        class: isReserved ? "ghost disabled" : "ghost",
+        href: "#"
+      }, isReserved ? "Déjà réservé 💛" : "Disponible");
 
-      if (status !== "reserve") {
-        reserveBtn.addEventListener("click", (e) => {
+      // 👉 Action seulement si dispo
+      if (!isReserved) {
+        dispoBtn.addEventListener("click", (e) => {
           e.preventDefault();
           openReserveModal(item.title);
         });
       }
 
-      actions.push(buyBtn, reserveBtn);
+      actions.push(buyBtn, dispoBtn);
+
     }
 
     const noteLine = (status === "reserve" && reservedNote)

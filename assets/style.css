@@ -330,3 +330,8 @@ a.btn.disabled{
   pointer-events:none;
   filter: grayscale(15%);
 }
+
+a.ghost.disabled{
+  opacity:.5;
+  pointer-events:none;
+}
