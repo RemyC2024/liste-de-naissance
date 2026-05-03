@@ -208,7 +208,7 @@
       "order": 23,
       "title": "🛁 Kit bain bébé",
       "mode": "reservation",
-      "status": "disponible",
+      "status": "reserve",
       "price": "53,95€",
       "description": "Kit bain avec baignoire, accessoires et jouets gris et blanc.",
       "image": "assets/images/kit_bain.png",
