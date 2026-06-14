@@ -196,7 +196,7 @@
       "order": 22,
       "title": "🎾 Balles sensorielles",
       "mode": "reservation",
-      "status": "disponible",
+      "status": "reserve",
       "price": "11,99€",
       "description": "Lot de 8 balles sensorielles multicolores pour stimuler les sens et la motricité.",
       "image": "assets/images/balles_sensorielles.png",
