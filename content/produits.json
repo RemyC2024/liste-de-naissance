@@ -220,7 +220,7 @@
       "order": 25,
       "title": "🧥 Poncho de voyage siège auto (sable)",
       "mode": "reservation",
-      "status": "disponible",
+      "status": "reserve",
       "price": "29,99€",
       "description": "Poncho de voyage adaptable sur siège auto et porte-bébé, pratique pour garder bébé au chaud sans gêner le harnais.",
       "image": "assets/images/poncho.png",
